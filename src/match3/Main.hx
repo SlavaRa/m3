@@ -1,14 +1,14 @@
 package match3;
 
-import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
 import match3.core.controllers.Match3Controller;
+import slavara.haxe.core.display.DisplayObject.BaseSprite;
 
 /**
  * @author SlavaRa
  */
-class Main extends Sprite {
+class Main extends BaseSprite {
 	
 	public static function main() {
 	   Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
@@ -18,15 +18,13 @@ class Main extends Sprite {
 	
 	public function new() {
 		super();	
-		addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 	}
 	
 	var inited:Bool;
 
 	function onStageResize(?_) if (!inited) initialize();
 	
-	function onAddedToStage(?_) {
-		removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+	override function onAddedToStage() {
 		stage.addEventListener(Event.RESIZE, onStageResize);
 		#if ios
 		haxe.Timer.delay(initialize, 100); // iOS 6

@@ -1,6 +1,1 @@
-bin/flash/bin/Match3corehx.swf
-bin/flash/haxe/ApplicationMain.hx
-bin/flash/haxe/NMEPreloader.hx
-bin/flash/haxe/debug.hxml
-bin/flash/haxe/nme/AssetData.hx
-bin/flash/haxe/release.hxml
+bin
