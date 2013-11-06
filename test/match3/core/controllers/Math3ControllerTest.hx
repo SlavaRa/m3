@@ -24,7 +24,6 @@ class Math3ControllerTest {
 	public function destroyTest() {
 		var controller = new Match3Controller(new Sprite());
 		
-		Assert.isNull(DestroyUtils.destroy(controller));
 		Assert.isNull(controller.data);
 		Assert.isNull(controller.container);
 	}
