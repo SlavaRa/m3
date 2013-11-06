@@ -7,7 +7,7 @@ import slavara.haxe.core.utils.Destroyable.DestroyUtils;
 /**
  * @author SlavaRa
  */
-class Math3ControllerTest {
+class Match3ControllerTest {
 
 	public function new() {
 	}

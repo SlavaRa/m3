@@ -1,7 +1,7 @@
 import massive.munit.TestSuite;
 
 import ExampleTest;
-import match3.core.controllers.Math3ControllerTest;
+import match3.core.controllers.Match3ControllerTest;
 import match3.core.display.Match3ViewTest;
 import match3.core.models.Match3ModelTest;
 
@@ -18,7 +18,7 @@ class TestSuite extends massive.munit.TestSuite
 		super();
 
 		add(ExampleTest);
-		add(match3.core.controllers.Math3ControllerTest);
+		add(match3.core.controllers.Match3ControllerTest);
 		add(match3.core.display.Match3ViewTest);
 		add(match3.core.models.Match3ModelTest);
 	}
