@@ -1,4 +1,8 @@
 package match3.core.controllers;
+import flash.display.Sprite;
+import massive.munit.Assert;
+import match3.core.controllers.Match3Controller;
+import slavara.haxe.core.utils.Destroyable.DestroyUtils;
 
 /**
  * @author SlavaRa
@@ -8,5 +12,20 @@ class Math3ControllerTest {
 	public function new() {
 	}
 	
-	//TODO: implement me!
+	@Test
+	public function initializeTest() {
+		var controller = new Match3Controller(new Sprite());
+		
+		Assert.isNotNull(controller.data);
+		Assert.isNotNull(controller.container);
+	}
+	
+	@Test
+	public function destroyTest() {
+		var controller = new Match3Controller(new Sprite());
+		
+		Assert.isNull(DestroyUtils.destroy(controller));
+		Assert.isNull(controller.data);
+		Assert.isNull(controller.container);
+	}
 }

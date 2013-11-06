@@ -17,6 +17,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
+    <class path="test" />
     <class path="d:\libs\haxe\slavara-core-haxe\src" />
     <class path="bin\flash\haxe" />
   </classpaths>
@@ -31,6 +32,7 @@
   </build>
   <!-- haxelib libraries -->
   <haxelib>
+    <library name="munit" />
     <library name="openfl" />
   </haxelib>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
