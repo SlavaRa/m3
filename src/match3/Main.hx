@@ -1,5 +1,6 @@
 package match3;
 
+import flash.display.DisplayObject;
 import flash.events.Event;
 import flash.Lib;
 import match3.core.controllers.Match3Controller;
