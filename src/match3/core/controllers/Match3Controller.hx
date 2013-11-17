@@ -8,7 +8,10 @@ import slavara.haxe.core.controllers.BaseController;
  */
 class Match3Controller extends BaseController {
 	
-	public function new(container:DisplayObjectContainer) {
-		super(container, new Match3Data());
+	public function new(container:DisplayObjectContainer) super(container, new Match3Data());
+	
+	public override function initialize() {
+		
 	}
+	
 }
