@@ -1,5 +1,4 @@
 package match3.core.models.behaviors;
-import haxe.Log;
 import massive.munit.Assert;
 import match3.core.models.behaviors.BehaviorCollectionData.BehaviorType;
 
@@ -11,14 +10,20 @@ class BehaviorCollectionDataTest {
 	public function new() {
 	}
 	
+	static var _enums = Type.allEnums(BehaviorType);
+	var _data:BehaviorCollectionData;
+	
+	@Before
+	public function initialize() {
+		_data = new BehaviorCollectionData();
+	}
+	
 	@Test
 	public function initializeTest() {
-		var enums = Type.allEnums(BehaviorType);
-		var data = new BehaviorCollectionData();
 		
-		Assert.areEqual(data.numChildren, enums.length);
-		Assert.isTrue(Type.getClass(data.getBehavior(BehaviorType.Moving)) == MovingBehavior);
-		Assert.isTrue(Type.getClass(data.getBehavior(BehaviorType.Rotating)) == RotatingBehavior);
-		Assert.isTrue(Type.getClass(data.getBehavior(BehaviorType.Selecting)) == SelectingBehavior);
+		Assert.areEqual(_data.numChildren, _enums.length);
+		Assert.isTrue(Type.getClass(_data.getBehavior(BehaviorType.Moving)) == MovingBehavior);
+		Assert.isTrue(Type.getClass(_data.getBehavior(BehaviorType.Rotating)) == RotatingBehavior);
+		Assert.isTrue(Type.getClass(_data.getBehavior(BehaviorType.Selecting)) == SelectingBehavior);
 	}
 }
