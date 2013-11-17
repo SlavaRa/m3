@@ -4,12 +4,14 @@
 -lib hamcrest
 -lib openfl
 
--cp d:/libs/haxe/slavara-core-haxe/src/
+-cp D:/haxe/slavara-core-hx/src/
 -cp src
 -cp test
 
--swf-version 11
+-swf-version 11.8
+-swf-lib D:/haxe/slavara-core-hx/libs/datahelpers.swf
 -swf bin/as3_test.swf
+
 
 --next
 
@@ -22,7 +24,7 @@
 
 --remap flash:flash
 
--cp d:/libs/haxe/slavara-core-haxe/src/
+-cp D:/haxe/slavara-core-hx/src/
 -cp src
 -cp test
 -js bin/js_test.js
@@ -38,7 +40,7 @@
 
 --remap flash:flash
 
--cp d:/libs/haxe/slavara-core-haxe/src/
+-cp D:/haxe/slavara-core-hx/src/
 -cp src
 -cp test
 
@@ -50,13 +52,12 @@
 -main TestMain
 -lib munit
 -lib hamcrest
-
 -lib openfl
 -lib openfl-native
 
 --remap flash:flash
 
--cp d:/libs/haxe/slavara-core-haxe/src/
+-cp D:/haxe/slavara-core-hx/src/
 -cp src
 -cp test
 #-D HXCPP_M64

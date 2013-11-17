@@ -12,10 +12,10 @@
 	
 	<source path="src" />
 	<source path="test" />
-	<source path="d:/libs/haxe/slavara-core-haxe/src/" />
+	<source path="D:/haxe/slavara-core-hx/src/" />
 	
 	<haxelib name="munit" />
 	<haxelib name="openfl" />
-	
+	<haxeflag name="-swf-lib" value="D:/haxe/slavara-core-hx/libs/datahelpers.swf" if="flash" />
 	<haxeflag name="-dce std" if="haxe3" />
 </project>

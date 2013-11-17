@@ -12,20 +12,21 @@ class Match3ControllerTest {
 	public function new() {
 	}
 	
+	var _controller:Match3Controller;
+	
+	@Before
+	public function initialize() _controller = new Match3Controller(new Sprite());
+	
 	@Test
 	public function initializeTest() {
-		var controller = new Match3Controller(new Sprite());
-		
-		Assert.isNotNull(controller.data);
-		Assert.isNotNull(controller.container);
+		Assert.isNotNull(_controller.data);
+		Assert.isNotNull(_controller.container);
 	}
 	
 	@Test
 	public function destroyTest() {
-		var controller = new Match3Controller(new Sprite());
-		
-		DestroyUtils.destroy(controller);
-		Assert.isNull(controller.data);
-		Assert.isNull(controller.container);
+		DestroyUtils.destroy(_controller);
+		Assert.isNull(_controller.data);
+		Assert.isNull(_controller.container);
 	}
 }
