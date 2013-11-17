@@ -11,7 +11,6 @@ class Match3Controller extends BaseController {
 	public function new(container:DisplayObjectContainer) super(container, new Match3Data());
 	
 	public override function initialize() {
-		
 	}
 	
 }

@@ -1,6 +1,4 @@
 package match3;
-
-import flash.display.DisplayObject;
 import flash.events.Event;
 import flash.Lib;
 import match3.core.controllers.Match3Controller;
@@ -17,29 +15,23 @@ class Main extends BaseSprite {
 	   Lib.current.addChild(new Main());
 	}
 	
-	public function new() {
-		super();	
-	}
-	
-	var inited:Bool;
-
-	function onStageResize(?_) if (!inited) initialize();
+	public function new() super();	
 	
 	override function onAddedToStage() {
-		stage.addEventListener(Event.RESIZE, onStageResize);
+		stage.addEventListener(Event.RESIZE, initializeController);
 		#if ios
-		haxe.Timer.delay(initialize, 100); // iOS 6
+		haxe.Timer.delay(initializeController, 100); // iOS 6
 		#else
-		initialize();
+		initializeController();
 		#end
 	}
 	
-	function initialize() {
-		if (inited) {
-			return;
-		}
-		inited = true;
+	var _inited:Bool;
+	
+	function initializeController(?_) {
+		if(_inited) return;
 		
+		_inited = true;
 		new Match3Controller(this);
 	}
 }
