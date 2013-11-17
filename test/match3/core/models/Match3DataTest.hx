@@ -12,8 +12,7 @@ import match3.core.models.Match3Data;
  */
 class Match3DataTest {
 
-	public function new() {
-	}
+	public function new() {}
 	
 	var _data:Match3Data;
 	

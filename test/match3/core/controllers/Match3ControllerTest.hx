@@ -9,8 +9,7 @@ import slavara.haxe.core.utils.Destroyable.DestroyUtils;
  */
 class Match3ControllerTest {
 
-	public function new() {
-	}
+	public function new() { }
 	
 	var _controller:Match3Controller;
 	

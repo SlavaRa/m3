@@ -5,8 +5,7 @@ package match3.core.display;
  */
 class Match3ViewTest {
 
-	public function new() {
-	}
+	public function new() { }
 	
 	//TODO: implement me!
 }
