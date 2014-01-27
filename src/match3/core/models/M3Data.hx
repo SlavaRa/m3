@@ -3,7 +3,7 @@ import match3.core.Events.M3DataEvent;
 import match3.core.models.behaviors.BehaviorCollectionData;
 import match3.core.models.behaviors.IBehavior;
 import slavara.haxe.core.models.Data.DataContainer;
-import slavara.haxe.core.utils.Utils.ValidateUtil;
+using slavara.haxe.core.utils.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa
@@ -23,14 +23,11 @@ class M3Data extends DataContainer {
 		if(behavior == _behavior) {
 			return;
 		}
-		
-		if(ValidateUtil.isNotNull(_behavior)) {
+		if(_behavior.isNotNull()) {
 			_behavior.reset();
 		}
-		
 		_behavior = behavior;
 		_behavior.release();
-		
 		if(willTrigger(M3DataEvent.BEHAVIOR_CHANE)) {
 			dispatchEvent(new M3DataEvent(M3DataEvent.BEHAVIOR_CHANE, true));
 		}

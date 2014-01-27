@@ -2,12 +2,12 @@ package match3.core.controllers;
 import flash.display.Sprite;
 import massive.munit.Assert;
 import match3.core.controllers.M3Controller;
-import slavara.haxe.core.utils.Destroyable.DestroyUtils;
+using slavara.haxe.core.utils.Utils.DestroyUtil;
 
 /**
  * @author SlavaRa
  */
-class Match3ControllerTest {
+class M3ControllerTest {
 
 	public function new() { }
 	
@@ -24,7 +24,7 @@ class Match3ControllerTest {
 	
 	@Test
 	public function destroyTest() {
-		DestroyUtils.destroy(_controller);
+		DestroyUtil.destroy(_controller);
 		Assert.isNull(_controller.data);
 		Assert.isNull(_controller.container);
 	}

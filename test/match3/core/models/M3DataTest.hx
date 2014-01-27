@@ -6,6 +6,8 @@ import match3.core.models.behaviors.MovingBehavior;
 import match3.core.models.behaviors.RotatingBehavior;
 import match3.core.models.behaviors.SelectingBehavior;
 import match3.core.models.M3Data;
+using Reflect;
+using Std;
 
 /**
  * @author SlavaRa
@@ -21,37 +23,37 @@ class M3DataTest {
 	
 	@Test
 	public function initializeTest() {
-		Assert.isNull(Reflect.getProperty(_data, "_behavior"));
-		Assert.isNotNull(_data.behaviors);
+		Assert.isNull(_data.getProperty("_behavior"));
+		Assert.isNotNull(_data.getProperty("_behaviors"));
 	}
 	
 	@Test
 	public function setMovingBehaviorTest() {
 		_data.setBehavior(BehaviorType.Moving);
 		
-		var behavior = Reflect.getProperty(_data, "_behavior");
+		var behavior:Dynamic = _data.getProperty("_behavior");
 		Assert.isNotNull(behavior);
-		Assert.isTrue(Std.is(behavior, IBehavior));
-		Assert.isTrue(Std.is(behavior, MovingBehavior));
+		Assert.isTrue(behavior.is(IBehavior));
+		Assert.isTrue(behavior.is(MovingBehavior));
 	}
 	
 	@Test
 	public function setRotationgBehaviorTest() {
 		_data.setBehavior(BehaviorType.Rotating);
 		
-		var behavior = Reflect.getProperty(_data, "_behavior");
+		var behavior:Dynamic = _data.getProperty("_behavior");
 		Assert.isNotNull(behavior);
-		Assert.isTrue(Std.is(behavior, IBehavior));
-		Assert.isTrue(Std.is(behavior, RotatingBehavior));
+		Assert.isTrue(behavior.is(IBehavior));
+		Assert.isTrue(behavior.is(RotatingBehavior));
 	}
 	
 	@Test
 	public function setSelectingBehaviorTest() {
 		_data.setBehavior(BehaviorType.Selecting);
 		
-		var behavior = Reflect.getProperty(_data, "_behavior");
+		var behavior:Dynamic =_data.getProperty("_behavior");
 		Assert.isNotNull(behavior);
-		Assert.isTrue(Std.is(behavior, IBehavior));
-		Assert.isTrue(Std.is(behavior, SelectingBehavior));
+		Assert.isTrue(behavior.is(IBehavior));
+		Assert.isTrue(behavior.is(SelectingBehavior));
 	}
 }
