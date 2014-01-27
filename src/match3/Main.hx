@@ -1,7 +1,7 @@
 package match3;
 import flash.events.Event;
 import flash.Lib;
-import match3.core.controllers.Match3Controller;
+import match3.core.controllers.M3Controller;
 import slavara.haxe.core.display.DisplayObject.BaseSprite;
 
 /**
@@ -26,12 +26,14 @@ class Main extends BaseSprite {
 		#end
 	}
 	
-	var _inited:Bool;
+	var _isInitialized:Bool;
 	
 	function initializeController(?_) {
-		if(_inited) return;
+		if(_isInitialized) {
+			return;
+		}
 		
-		_inited = true;
-		new Match3Controller(this);
+		_isInitialized = true;
+		new M3Controller(this);
 	}
 }

@@ -5,19 +5,19 @@ import match3.core.models.behaviors.IBehavior;
 import match3.core.models.behaviors.MovingBehavior;
 import match3.core.models.behaviors.RotatingBehavior;
 import match3.core.models.behaviors.SelectingBehavior;
-import match3.core.models.Match3Data;
+import match3.core.models.M3Data;
 
 /**
  * @author SlavaRa
  */
-class Match3DataTest {
+class M3DataTest {
 
 	public function new() {}
 	
-	var _data:Match3Data;
+	var _data:M3Data;
 	
 	@Before
-	public function initialize() _data = new Match3Data();
+	public function initialize() _data = new M3Data();
 	
 	@Test
 	public function initializeTest() {
