@@ -1,5 +1,9 @@
-package match3.core.controllers;
+package match3.core;
 import flash.display.DisplayObjectContainer;
+import match3.core.controllers.ServerController;
+import match3.core.controllers.SoundController;
+import match3.core.controllers.StatController;
+import match3.core.controllers.UserController;
 import match3.core.models.M3Data;
 import slavara.haxe.core.controllers.BaseController;
 

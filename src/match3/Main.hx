@@ -1,8 +1,6 @@
 package match3;
-import flash.events.Event;
 import flash.Lib;
-import match3.core.controllers.SystemController;
-import slavara.haxe.core.controllers.BaseController.IController;
+import match3.core.SystemController;
 import slavara.haxe.core.display.DisplayObject.BaseSprite;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
 
@@ -20,7 +18,7 @@ class Main extends BaseSprite {
 	public function new() super();	
 	
 	override function onAddedToStage() {
-		stage.addEventListener(Event.RESIZE, initializeController);
+		stage.addEventListener(flash.events.Event.RESIZE, initializeController);
 		#if ios
 		haxe.Timer.delay(initializeController, 100); // iOS 6
 		#else
@@ -28,7 +26,7 @@ class Main extends BaseSprite {
 		#end
 	}
 	
-	var _controller:IController;
+	var _controller:SystemController;
 	
 	function initializeController(?_) {
 		if(_controller.isNotNull()) {

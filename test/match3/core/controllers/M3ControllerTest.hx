@@ -1,7 +1,7 @@
 package match3.core.controllers;
 import flash.display.Sprite;
 import massive.munit.Assert;
-import match3.core.controllers.SystemController;
+import match3.core.SystemController;
 using slavara.haxe.core.utils.Utils.DestroyUtil;
 
 /**
