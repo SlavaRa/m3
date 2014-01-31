@@ -1,4 +1,5 @@
 package match3.core.controllers;
+import match3.core.DataBase;
 import match3.core.display.ScreenView;
 import slavara.haxe.core.controllers.BaseController.AbstractController;
 import slavara.haxe.core.controllers.BaseController.IBaseController;
@@ -14,6 +15,9 @@ class ScreenController extends AbstractController {
 	var _view:ScreenView;
 	
 	public override function initialize() {
+		super.initialize();
+		
 		cast(baseController, IBaseController).container.addChild(_view = new ScreenView());
+		_view.data = cast(data, DataBase);
 	}
 }
