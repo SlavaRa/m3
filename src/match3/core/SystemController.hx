@@ -4,7 +4,7 @@ import match3.core.controllers.ServerController;
 import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
-import match3.core.models.M3Data;
+import match3.core.models.DataBase;
 import slavara.haxe.core.controllers.BaseController;
 
 /**
@@ -12,7 +12,7 @@ import slavara.haxe.core.controllers.BaseController;
  */
 class SystemController extends BaseController {
 	
-	public function new(container:DisplayObjectContainer) super(container, new M3Data());
+	public function new(container:DisplayObjectContainer) super(container, new DataBase());
 	
 	public var server(default, null):ServerController;
 	public var sound(default, null):SoundController;

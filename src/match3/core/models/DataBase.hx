@@ -4,7 +4,7 @@ using Reflect;
 /**
  * @author SlavaRa
  */
-class M3Data extends UnitData {
+class DataBase extends UnitData {
 	
 	public function new() {
 		super();

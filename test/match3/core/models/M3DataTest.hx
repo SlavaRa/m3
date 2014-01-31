@@ -5,7 +5,7 @@ import match3.core.models.behaviors.IBehavior;
 import match3.core.models.behaviors.MovingBehavior;
 import match3.core.models.behaviors.RotatingBehavior;
 import match3.core.models.behaviors.SelectingBehavior;
-import match3.core.models.M3Data;
+import match3.core.models.DataBase;
 using Reflect;
 using Std;
 
@@ -16,10 +16,10 @@ class M3DataTest {
 
 	public function new() {}
 	
-	var _data:M3Data;
+	var _data:DataBase;
 	
 	@Before
-	public function initialize() _data = new M3Data();
+	public function initialize() _data = new DataBase();
 	
 	@Test
 	public function initializeTest() {
