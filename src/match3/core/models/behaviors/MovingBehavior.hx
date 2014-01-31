@@ -1,5 +1,6 @@
 package match3.core.models.behaviors;
-import slavara.haxe.core.models.Data;
+import match3.core.Interfaces.IBehavior;
+import slavara.haxe.core.Models.Data;
 
 /**
  * @author SlavaRa
@@ -8,9 +9,9 @@ class MovingBehavior extends Data implements IBehavior {
 
 	public function new() super();
 	
-	public function reset() {
+	public function start() {
 	}
 	
-	public function release() {
+	public function reset() {
 	}
 }

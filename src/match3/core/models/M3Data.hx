@@ -1,8 +1,8 @@
 package match3.core.models;
 import match3.core.Events.M3DataEvent;
+import match3.core.Interfaces.IBehavior;
 import match3.core.models.behaviors.BehaviorCollectionData;
-import match3.core.models.behaviors.IBehavior;
-import slavara.haxe.core.models.Data.DataContainer;
+import slavara.haxe.core.Models.DataContainer;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
 
 /**
@@ -27,7 +27,7 @@ class M3Data extends DataContainer {
 			_behavior.reset();
 		}
 		_behavior = behavior;
-		_behavior.release();
+		_behavior.start();
 		if(willTrigger(M3DataEvent.BEHAVIOR_CHANE)) {
 			dispatchEvent(new M3DataEvent(M3DataEvent.BEHAVIOR_CHANE, true));
 		}

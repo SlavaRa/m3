@@ -1,6 +1,8 @@
 package match3.core.models.behaviors;
+import match3.core.Interfaces.IBehavior;
 import match3.core.models.behaviors.BehaviorCollectionData.BehaviorType;
-import slavara.haxe.core.models.Data;
+import slavara.haxe.core.Models.Data;
+import slavara.haxe.core.Models.DataContainer;
 
 /**
  * @author SlavaRa
