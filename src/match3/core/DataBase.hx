@@ -1,6 +1,8 @@
 package match3.core;
+import match3.core.Enums.GameState;
 import match3.core.models.UnitData;
 import match3.core.models.UserData;
+import statemachine.StateMachine;
 using Reflect;
 
 /**
@@ -10,9 +12,14 @@ class DataBase extends UnitData {
 	
 	public function new() {
 		super();
+		
+		stateMachine = new StateMachine();
+		stateMachine.setState(GameState.Empty);
+		
 		addChild(user = new UserData());
 	}
 	
+	public var stateMachine(default, null):StateMachine;
 	public var user(default, null):UserData;
 	
 	override function deserialize(input:Dynamic) {
