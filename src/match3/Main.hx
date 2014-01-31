@@ -1,7 +1,7 @@
 package match3;
 import flash.events.Event;
 import flash.Lib;
-import match3.core.controllers.M3Controller;
+import match3.core.controllers.SystemController;
 import slavara.haxe.core.controllers.BaseController.IController;
 import slavara.haxe.core.display.DisplayObject.BaseSprite;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
@@ -34,6 +34,6 @@ class Main extends BaseSprite {
 		if(_controller.isNotNull()) {
 			return;
 		}
-		_controller = new M3Controller(this);
+		_controller = new SystemController(this);
 	}
 }

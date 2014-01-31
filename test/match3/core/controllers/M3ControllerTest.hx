@@ -1,7 +1,7 @@
 package match3.core.controllers;
 import flash.display.Sprite;
 import massive.munit.Assert;
-import match3.core.controllers.M3Controller;
+import match3.core.controllers.SystemController;
 using slavara.haxe.core.utils.Utils.DestroyUtil;
 
 /**
@@ -11,10 +11,10 @@ class M3ControllerTest {
 
 	public function new() { }
 	
-	var _controller:M3Controller;
+	var _controller:SystemController;
 	
 	@Before
-	public function initialize() _controller = new M3Controller(new Sprite());
+	public function initialize() _controller = new SystemController(new Sprite());
 	
 	@Test
 	public function initializeTest() {
