@@ -6,6 +6,7 @@ import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
 import match3.core.DataBase;
+import match3.core.Enums.GameState;
 import match3.core.Events.ServerControllerEvent;
 import slavara.haxe.core.controllers.BaseController;
 using Reflect;
@@ -27,6 +28,7 @@ class SystemController extends BaseController {
 		super.initialize();
 		initializeControllers();
 		initializeListeners();
+		startUp();
 	}
 	
 	inline function initializeControllers() {
@@ -39,6 +41,10 @@ class SystemController extends BaseController {
 	
 	inline function initializeListeners() {
 		server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, this.onServerMessageReceived);
+	}
+	
+	inline function startUp() {
+		cast(data, DataBase).stateMachine.setState(GameState.World);
 	}
 	
 	function onServerMessageReceived(event:ServerControllerEvent) {
