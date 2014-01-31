@@ -1,7 +1,7 @@
 package match3;
 import flash.Lib;
 import match3.core.SystemController;
-import slavara.haxe.core.display.DisplayObject.BaseSprite;
+import slavara.haxe.core.TypeDefs.BaseSprite;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
 
 /**
