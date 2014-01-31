@@ -19,6 +19,7 @@ class DataEvent extends DataBaseEvent {
  * @author SlavaRa
  */
 class ServerControllerEvent extends ControllerEvent {
+	
 	public static inline var MESSAGE_RECEIVED = "messageReceived";
 	
 	public function new(type:String, ?cancelable:Bool, message:Dynamic) {
