@@ -19,16 +19,16 @@
     <class path="src" />
     <class path="test" />
     <class path="D:\haxe\slavara-core-hx\src" />
-    <class path="bin\flash\haxe" />
+    <class path="bin\windows\neko\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="tools=1.2.8&#xA;display&#xA;web" />
+    <option directives="tools=1.2.8&#xA;lime_native&#xA;no-compilation&#xA;display&#xA;windows&#xA;desktop" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="True" />
-    <option additional="--no-output&#xA;-swf-lib D:/haxe/slavara-core-hx/libs/datahelpers.swf&#xA;-dce std&#xA;-swf-version 11.2&#xA;#--remap nme:flash" />
+    <option additional="--no-output&#xA;-dce std&#xA;--macro allowPackage(&quot;flash&quot;)&#xA;--macro keep(&quot;match3.Main&quot;)" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
@@ -53,7 +53,7 @@
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
   <options>
-    <option showHiddenPaths="True" />
+    <option showHiddenPaths="False" />
     <option testMovie="Custom" />
     <option testMovieCommand="" />
   </options>
