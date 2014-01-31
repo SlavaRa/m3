@@ -4,7 +4,7 @@ import match3.core.controllers.ServerController;
 import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
-import match3.core.models.DataBase;
+import match3.core.DataBase;
 import slavara.haxe.core.controllers.BaseController;
 
 /**

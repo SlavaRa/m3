@@ -1,4 +1,6 @@
-package match3.core.models;
+package match3.core;
+import match3.core.models.UnitData;
+import match3.core.models.UserData;
 using Reflect;
 
 /**

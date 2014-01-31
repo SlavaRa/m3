@@ -5,7 +5,7 @@ import match3.core.models.behaviors.IBehavior;
 import match3.core.models.behaviors.MovingBehavior;
 import match3.core.models.behaviors.RotatingBehavior;
 import match3.core.models.behaviors.SelectingBehavior;
-import match3.core.models.DataBase;
+import match3.core.DataBase;
 using Reflect;
 using Std;
 
