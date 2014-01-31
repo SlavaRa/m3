@@ -13,8 +13,10 @@
 	<source path="src" />
 	<source path="test" />
 	<source path="D:/haxe/slavara-core-hx/src/" />
+	<source path="D:/haxe/StateMachine-hx/src/" />
 	
 	<haxelib name="munit" />
+	<haxelib name="msignal" />
 	<haxelib name="openfl" />
 	<haxeflag name="-swf-lib" value="D:/haxe/slavara-core-hx/libs/datahelpers.swf" if="flash" />
 	<haxeflag name="-dce std" if="haxe3" />
