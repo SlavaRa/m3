@@ -14,5 +14,6 @@ class ServerController extends AbstractController {
 	}
 	
 	public function send(command:ServerCommand, data:Dynamic, onResponseReceived:Dynamic->Void, onResponseSavedData:Dynamic) {
+		
 	}
 }

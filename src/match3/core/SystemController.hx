@@ -5,6 +5,8 @@ import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
 import match3.core.DataBase;
+import match3.core.Events.ControllerEvent;
+import match3.core.Events.ServerControllerEvent;
 import slavara.haxe.core.controllers.BaseController;
 
 /**
@@ -21,10 +23,22 @@ class SystemController extends BaseController {
 	
 	public override function initialize() {
 		super.initialize();
-		
+		initializeControllers();
+		initializeListeners();
+	}
+	
+	inline function initializeControllers() {
 		server = new ServerController(this);
 		sound = new SoundController(this);
 		stat = new StatController(this);
 		user = new UserController(this);
+	}
+	
+	inline function initializeListeners() {
+		server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, this.onServerMessageReceived);
+	}
+	
+	function onServerMessageReceived(event:ServerControllerEvent) {
+		cast(data, DataBase).readExternal(event.message);
 	}
 }
