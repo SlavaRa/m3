@@ -5,9 +5,9 @@ import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
 import match3.core.DataBase;
-import match3.core.Events.ControllerEvent;
 import match3.core.Events.ServerControllerEvent;
 import slavara.haxe.core.controllers.BaseController;
+using Reflect;
 
 /**
  * @author SlavaRa
@@ -39,6 +39,9 @@ class SystemController extends BaseController {
 	}
 	
 	function onServerMessageReceived(event:ServerControllerEvent) {
-		cast(data, DataBase).readExternal(event.message);
+		var message:Dynamic = event.message;
+		if(message.hasField("global")) {
+			cast(data, DataBase).readExternal(message.getProperty("global"));
+		}
 	}
 }
