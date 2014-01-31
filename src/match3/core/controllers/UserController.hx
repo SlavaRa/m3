@@ -5,10 +5,6 @@ import slavara.haxe.core.controllers.BaseController.IController;
 /**
  * @author SlavaRa
  */
-class ServerController extends AbstractController {
-
+class UserController extends AbstractController {
 	public function new(controller:IController) super(controller);
-	
-	public override function initialize() {
-	}
 }
