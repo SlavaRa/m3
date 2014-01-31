@@ -1,5 +1,6 @@
 package match3.core;
 import flash.display.DisplayObjectContainer;
+import match3.core.controllers.ScreenController;
 import match3.core.controllers.ServerController;
 import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
@@ -20,6 +21,7 @@ class SystemController extends BaseController {
 	public var sound(default, null):SoundController;
 	public var stat(default, null):StatController;
 	public var user(default, null):UserController;
+	public var screen(default, null):ScreenController;
 	
 	public override function initialize() {
 		super.initialize();
@@ -32,6 +34,7 @@ class SystemController extends BaseController {
 		sound = new SoundController(this);
 		stat = new StatController(this);
 		user = new UserController(this);
+		screen = new ScreenController(this);
 	}
 	
 	inline function initializeListeners() {
