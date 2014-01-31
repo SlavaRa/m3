@@ -2,13 +2,13 @@ package match3.core.models;
 import match3.core.Events.M3DataEvent;
 import match3.core.Interfaces.IBehavior;
 import match3.core.models.behaviors.BehaviorCollectionData;
-import slavara.haxe.core.Models.DataContainer;
+import slavara.haxe.core.Models.DataValueObjectContainer;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa
  */
-class M3Data extends DataContainer {
+class M3Data extends DataValueObjectContainer {
 
 	public function new() {
 		super();
@@ -32,4 +32,6 @@ class M3Data extends DataContainer {
 			dispatchEvent(new M3DataEvent(M3DataEvent.BEHAVIOR_CHANE, true));
 		}
 	}
+	
+	
 }
