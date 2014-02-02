@@ -1,7 +1,7 @@
 package match3.core.display;
 import match3.core.DataBase;
 import match3.core.display.screens.EmptyScreen;
-import match3.core.display.screens.LevelScreen;
+import match3.core.display.screens.LocationScreen;
 import match3.core.display.screens.WorldScreen;
 import match3.core.Enums.GameState;
 import slavara.haxe.core.StateMachine;
@@ -29,7 +29,7 @@ class ScreenView extends ResourceSprite {
 			
 			if(data.isNotNull()) {
 				var smachine:StateMachine = data.stateMachine;
-				smachine.addAllToAll([GameState.Empty, GameState.Level, GameState.World]);
+				smachine.addAllToAll([GameState.Empty, GameState.Location, GameState.World]);
 				smachine.onChange.add(updateState);
 			}
 			
@@ -56,7 +56,7 @@ class ScreenView extends ResourceSprite {
 		_states = new Map();
 		_states.set(GameState.Empty, new EmptyScreen());
 		_states.set(GameState.World, new WorldScreen());
-		_states.set(GameState.Level, new LevelScreen());
+		_states.set(GameState.Location, new LocationScreen());
 	}
 	
 	inline function updateState() {
