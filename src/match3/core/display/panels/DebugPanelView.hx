@@ -14,9 +14,7 @@ import slavara.haxe.core.utils.Utils.DestroyUtil;
  */
 class DebugPanelView extends ResourceSprite {
 
-	public function new() {
-		super();
-	}
+	public function new() super();
 	
 	var _box:HBox;
 	
@@ -38,27 +36,24 @@ class DebugPanelView extends ResourceSprite {
 		_box.align = "left,middle";
 		_box.paddingRight = 10;
 		_box.paddingLeft = 10;
-		_box.childPadding = 10;
+		_box.childPadding = 5;
 		
-		var btn = UIBuilder.create(Button);
-		btn.autoSize = true;
-		btn.format = TextFieldUtils.getServiceButtonFormat();
-		btn.text = "Empty screen";
-		btn.skin = btnSkin;
-		btn.applySkin();
-		btn.addEventListener(MouseEvent.CLICK, onEmptyScreenClick);
+		var label2handler:Map<String, MouseEvent->Void> = new Map();
+		label2handler.set("reset", onResetClick);
+		label2handler.set("empty screen", onEmptyScreenClick);
+		label2handler.set("world screen", onWorldScreenClick);
 		
-		_box.addChild(btn);
-		
-		btn = UIBuilder.create(Button);
-		btn.autoSize = true;
-		btn.format = TextFieldUtils.getServiceButtonFormat();
-		btn.text = "World screen";
-		btn.skin = btnSkin;
-		btn.applySkin();
-		btn.addEventListener(MouseEvent.CLICK, onWorldScreenClick);
-		
-		_box.addChild(btn);
+		for(it in label2handler.keys()) {
+			var btn:Button = UIBuilder.create(Button);
+			btn.autoSize = true;
+			btn.format = TextFieldUtils.getServiceButtonFormat();
+			btn.text = it;
+			btn.skin = btnSkin;
+			btn.applySkin();
+			btn.addEventListener(MouseEvent.CLICK, label2handler.get(it));
+			
+			_box.addChild(btn);
+		}
 	}
 	
 	public override function destroy() {
@@ -83,6 +78,12 @@ class DebugPanelView extends ResourceSprite {
 	inline function updateHBox() {
 		_box.y = stage.stageHeight - _box.h;
 		_box.w = stage.stageWidth - 200;
+	}
+	
+	function onResetClick(event:MouseEvent) {
+		if(willTrigger(GameEvent.RESET)) {
+			super.dispatchEvent(new GameEvent(GameEvent.RESET, true));
+		}
 	}
 	
 	function onEmptyScreenClick(event:MouseEvent) {
