@@ -17,9 +17,8 @@ class EmptyScreen extends ResourceSprite {
 	public override function initialize() {
 		super.initialize();
 		
-		_label = new TextField();
-		_label.defaultTextFormat = TextFieldUtils.getServiceTextFormat();
-		_label.autoSize = TextFieldAutoSize.LEFT;
+		initializeDebugLabel();
+		initializeDebugMenu();
 	}
 	
 	public override function destroy() {
@@ -28,12 +27,9 @@ class EmptyScreen extends ResourceSprite {
 		_label = DestroyUtil.destroy(_label);
 	}
 	
-	function getDebugLabelText():String return "Empty screen";
-	
 	override function onAddedToStage() {
 		super.onAddedToStage();
 		
-		_label.text = getDebugLabelText();
 		_label.x = stage.stageWidth - _label.width - 10;
 		_label.y = stage.stageHeight - _label.height - 10;
 		addChild(_label);
@@ -44,4 +40,18 @@ class EmptyScreen extends ResourceSprite {
 		
 		removeChild(_label);
 	}
+	
+	inline function initializeDebugLabel() {
+		_label = new TextField();
+		_label.defaultTextFormat = TextFieldUtils.getServiceTextFormat();
+		_label.autoSize = TextFieldAutoSize.LEFT;
+		_label.text = getDebugLabelText();
+	}
+	
+	function getDebugLabelText():String return "Empty screen";
+	
+	inline function initializeDebugMenu() {
+		
+	}
+	
 }
