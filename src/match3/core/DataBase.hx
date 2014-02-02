@@ -26,7 +26,7 @@ class DataBase extends UnitData {
 		super.deserialize(input);
 		
 		if(input.hasField("user")) {
-			user.readExternal(input.getProperty('input'));
+			user.readExternal(input.getProperty('user'));
 		}
 	}
 }
