@@ -10,17 +10,19 @@ using Reflect;
  */
 class DataBase extends UnitData {
 	
-	public function new() {
-		super();
+	public function new() super();
+	
+	public var stateMachine(default, null):StateMachine;
+	public var user(default, null):UserData;
+	
+	override function initialize() {
+		super.initialize();
 		
 		stateMachine = new StateMachine();
 		stateMachine.setState(GameState.Empty);
 		
 		addChild(user = new UserData());
 	}
-	
-	public var stateMachine(default, null):StateMachine;
-	public var user(default, null):UserData;
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);

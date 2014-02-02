@@ -8,10 +8,15 @@ using Reflect;
  */
 class UnitData extends DataValueObjectContainer implements IUnknown {
 
-	public function new() super();
+	public function new() {
+		super();
+		initialize();
+	}
 	
 	public var id(default, default):Int;
 	public var desc(default, default):String;
+	
+	function initialize() { }
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
