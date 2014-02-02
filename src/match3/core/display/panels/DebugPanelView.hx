@@ -54,6 +54,8 @@ class DebugPanelView extends ResourceSprite {
 			
 			_box.addChild(btn);
 		}
+		
+		addChild(_box);
 	}
 	
 	public override function destroy() {
@@ -66,13 +68,6 @@ class DebugPanelView extends ResourceSprite {
 		super.onAddedToStage();
 		
 		updateHBox();
-		addChild(_box);
-	}
-	
-	override function onRemovedFromStage() {
-		super.onRemovedFromStage();
-		
-		removeChild(_box);
 	}
 	
 	inline function updateHBox() {
