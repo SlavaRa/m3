@@ -8,6 +8,7 @@ import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
 import match3.core.DataBase;
 import match3.core.Enums.GameState;
+import match3.core.Enums.ServerCommand;
 import match3.core.Events.GameEvent;
 import match3.core.Events.ServerControllerEvent;
 import slavara.haxe.core.controllers.BaseController;
@@ -51,9 +52,7 @@ class SystemController extends BaseController {
 		container.addEventListener(GameEvent.GOTO_WORLD_SCREEN, onGotoWorldScreen);
 	}
 	
-	inline function startUp() {
-		//cast(data, DataBase).stateMachine.setState(GameState.World);
-	}
+	inline function startUp() server.send(ServerCommand.Start);
 	
 	function onServerMessageReceived(event:ServerControllerEvent) {
 		var message:Dynamic = event.message;
@@ -62,9 +61,7 @@ class SystemController extends BaseController {
 		}
 	}
 	
-	function onReset(?_) {
-		//TODO: implement me
-	}
+	function onReset(?_) server.send(ServerCommand.Reset);
 	
 	function onGotoEmptyScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.Empty);
 	
