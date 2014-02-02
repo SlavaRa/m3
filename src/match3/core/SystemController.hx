@@ -47,7 +47,7 @@ class SystemController extends BaseController {
 	}
 	
 	inline function startUp() {
-		cast(data, DataBase).stateMachine.setState(GameState.World);
+		//cast(data, DataBase).stateMachine.setState(GameState.World);
 	}
 	
 	function onServerMessageReceived(event:ServerControllerEvent) {

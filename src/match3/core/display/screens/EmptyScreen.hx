@@ -18,7 +18,6 @@ class EmptyScreen extends ResourceSprite {
 		super.initialize();
 		
 		initializeDebugLabel();
-		initializeDebugMenu();
 	}
 	
 	public override function destroy() {
@@ -49,9 +48,4 @@ class EmptyScreen extends ResourceSprite {
 	}
 	
 	function getDebugLabelText():String return "Empty screen";
-	
-	inline function initializeDebugMenu() {
-		
-	}
-	
 }
