@@ -1,6 +1,7 @@
 package match3;
 import flash.Lib;
 import match3.core.SystemController;
+import ru.stablex.ui.UIBuilder;
 import slavara.haxe.core.TypeDefs.BaseSprite;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
 
@@ -32,6 +33,8 @@ class Main extends BaseSprite {
 		if(_controller.isNotNull()) {
 			return;
 		}
+		UIBuilder.init();
+		
 		_controller = new SystemController(this);
 	}
 }
