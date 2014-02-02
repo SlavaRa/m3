@@ -33,6 +33,7 @@
   <!-- haxelib libraries -->
   <haxelib>
     <library name="munit" />
+    <library name="msignal" />
     <library name="openfl" />
   </haxelib>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
