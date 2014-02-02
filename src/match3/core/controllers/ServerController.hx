@@ -10,10 +10,6 @@ class ServerController extends AbstractController {
 
 	public function new(controller:IController) super(controller);
 	
-	public override function initialize() {
-	}
-	
-	public function send(command:ServerCommand, data:Dynamic, onResponseReceived:Dynamic->Void, onResponseSavedData:Dynamic) {
-		
+	public function send(command:ServerCommand, ?data:Dynamic, ?onResponseReceived:Dynamic->Void, ?onResponseSavedData:Dynamic) {
 	}
 }
