@@ -13,7 +13,7 @@ class UnitData extends DataValueObjectContainer implements IUnknown {
 	public var id(default, default):Int;
 	public var desc(default, default):String;
 	
-	private override function deserialize(input:Dynamic) {
+	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
 		
 		if(input.hasField("id")) {

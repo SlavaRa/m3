@@ -7,4 +7,10 @@ using Reflect;
 class UserData extends UnitData {
 
 	public function new() super();
+	
+	override function deserialize(input:Dynamic) {
+		super.deserialize(input);
+		
+		
+	}
 }
