@@ -7,5 +7,6 @@ enum GameState {
 }
 
 enum ServerCommand {
-	
+	Start;
+	Reset;
 }
