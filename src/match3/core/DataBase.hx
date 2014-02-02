@@ -2,7 +2,7 @@ package match3.core;
 import match3.core.Enums.GameState;
 import match3.core.models.UnitData;
 import match3.core.models.UserData;
-import statemachine.StateMachine;
+import slavara.haxe.core.StateMachine;
 using Reflect;
 
 /**

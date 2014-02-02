@@ -4,10 +4,10 @@ import match3.core.display.screens.EmptyScreen;
 import match3.core.display.screens.LevelScreen;
 import match3.core.display.screens.WorldScreen;
 import match3.core.Enums.GameState;
+import slavara.haxe.core.StateMachine;
 import slavara.haxe.core.TypeDefs.DisplayObject;
 import slavara.haxe.core.TypeDefs.ResourceSprite;
 import slavara.haxe.core.utils.Utils.DestroyUtil;
-import statemachine.StateMachine;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
 
 /**

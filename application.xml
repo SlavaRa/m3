@@ -13,7 +13,6 @@
 	<source path="src" />
 	<source path="test" />
 	<source path="D:/haxe/slavara-core-hx/src/" />
-	<source path="D:/haxe/StateMachine-hx/src/" />
 	
 	<haxelib name="munit" />
 	<haxelib name="msignal" />
