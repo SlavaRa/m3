@@ -46,6 +46,7 @@ class SystemController extends BaseController {
 	inline function initializeListeners() {
 		server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, this.onServerMessageReceived);
 		
+		container.addEventListener(GameEvent.RESET, onReset);
 		container.addEventListener(GameEvent.GOTO_EMPTY_SCREEN, onGotoEmptyScreen);
 		container.addEventListener(GameEvent.GOTO_WORLD_SCREEN, onGotoWorldScreen);
 	}
@@ -61,8 +62,12 @@ class SystemController extends BaseController {
 		}
 	}
 	
-	function onGotoEmptyScreen(event:GameEvent) cast(data, DataBase).stateMachine.setState(GameState.Empty);
+	function onReset(?_) {
+		//TODO: implement me
+	}
 	
-	function onGotoWorldScreen(event:GameEvent) cast(data, DataBase).stateMachine.setState(GameState.World);
+	function onGotoEmptyScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.Empty);
+	
+	function onGotoWorldScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.World);
 	
 }
