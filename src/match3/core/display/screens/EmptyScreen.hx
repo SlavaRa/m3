@@ -29,8 +29,8 @@ class EmptyScreen extends ResourceSprite {
 	override function onAddedToStage() {
 		super.onAddedToStage();
 		
-		_label.x = stage.stageWidth - _label.width - 10;
-		_label.y = stage.stageHeight - _label.height - 10;
+		_label.x = stage.stageWidth - _label.width - 5;
+		_label.y = stage.stageHeight - _label.height;
 		addChild(_label);
 	}
 	
