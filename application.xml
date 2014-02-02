@@ -17,6 +17,8 @@
 	<haxelib name="munit" />
 	<haxelib name="msignal" />
 	<haxelib name="openfl" />
+	<haxelib name="stablexui" />
+	
 	<haxeflag name="-swf-lib" value="D:/haxe/slavara-core-hx/libs/datahelpers.swf" if="flash" />
 	<haxeflag name="-dce std" if="haxe3" />
 </project>
