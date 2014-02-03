@@ -1,5 +1,4 @@
 package match3.core;
-import match3.core.TypeDefs.UnitRawData;
 
 /**
  * @author SlavaRa
