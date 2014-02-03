@@ -74,6 +74,8 @@ class WorldData extends LocationData {
 					if(_id2location.exists(id)) {
 						removeChild(_id2location.get(id));
 					}
+				} else {
+					//TODO: throw error
 				}
 			}
 		}
@@ -85,6 +87,8 @@ class WorldData extends LocationData {
 					if(_id2location.exists(id)) {
 						_id2location.get(id).readExternal(it);
 					}
+				} else {
+					//TODO: throw error
 				}
 			}
 		}
