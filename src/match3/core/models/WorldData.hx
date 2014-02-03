@@ -1,38 +1,28 @@
 package match3.core.models;
 import slavara.haxe.core.Models.Data;
+using slavara.haxe.core.utils.Utils.ValidateUtil;
 using Reflect;
 using Std;
 
 /**
  * @author SlavaRa
  */
-class WorldData extends UnitData {
+class WorldData extends LocationData {
 
 	public function new() super();
 	
-	public var id2location(default, null):Map<Int, LocationData>;
+	private var _id2location:Map<Int, LocationData>;
 	
 	override function initialize() {
 		super.initialize();
 		
-		id2location = new Map();
+		_id2location = new Map();
 	}
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
 		
-		if(input.getProperty("locations")) {
-			//TODO: implement me
-		}
-		if(input.getProperty("=locations")) {
-			//TODO: implement me
-		}
-		if(input.getProperty("-locations")) {
-			//TODO: implement me
-		}
-		if(input.getProperty("+locations")) {
-			//TODO: implement me
-		}
+		deserializeLocations(input);
 	}
 	
 	override function addChildBefore(child:Data) {
@@ -41,10 +31,10 @@ class WorldData extends UnitData {
 		if(child.is(LocationData)) {
 			var location:LocationData = cast(child, LocationData);
 			var id = location.id;
-			if(id2location.exists(id)) {
+			if(_id2location.exists(id)) {
 				//TODO: throw error
 			}
-			id2location.set(id, location);
+			_id2location.set(id, location);
 		}
 	}
 	
@@ -53,8 +43,50 @@ class WorldData extends UnitData {
 		
 		if(child.is(LocationData)) {
 			var id = cast(child, LocationData).id;
-			if(id2location.exists(id)) {
-				id2location.remove(id);
+			if(_id2location.exists(id)) {
+				_id2location.remove(id);
+			}
+		}
+	}
+	
+	@:final @:noCompletion inline function deserializeLocations(input:Dynamic) {
+		var locations:Array<Dynamic> = null;
+		if(input.hasField("locations")) {
+			locations = input.getProperty("locations");
+			if(input.hasField("+locations")) {
+				var tmpLocations:Array<Dynamic> = input.getProperty("+locations");
+				locations = locations.concat(tmpLocations);
+			}
+			input.setField("+locations", locations);
+		}
+		if(input.hasField("+locations")) {
+			locations = input.getProperty("+locations");
+			for(it in locations) {
+				var location = new LocationData();
+				location.readExternal(it);
+				addChild(location);
+			}
+		}
+		if(input.hasField("-locations")) {
+			locations = input.getProperty("-locations");
+			for(it in locations) {
+				if(it.hasField("id")) {
+					var id:Int = cast(it.getProperty("id"), Int);
+					if(_id2location.exists(id)) {
+						removeChild(_id2location.get(id));
+					}
+				}
+			}
+		}
+		if(input.hasField("=locations")) {
+			locations = input.getProperty("=locations");
+			for(it in locations) {
+				if(it.hasField("id")) {
+					var id:Int = cast(it.getProperty("id"), Int);
+					if(_id2location.exists(id)) {
+						_id2location.get(id).readExternal(it);
+					}
+				}
 			}
 		}
 	}
