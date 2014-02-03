@@ -54,8 +54,7 @@ class WorldData extends LocationData {
 		if(input.hasField("locations")) {
 			locations = input.getProperty("locations");
 			if(input.hasField("+locations")) {
-				var tmpLocations:Array<Dynamic> = input.getProperty("+locations");
-				locations = locations.concat(tmpLocations);
+				locations = locations.concat(input.getProperty("+locations"));
 			}
 			input.setField("+locations", locations);
 		}
@@ -71,7 +70,7 @@ class WorldData extends LocationData {
 			locations = input.getProperty("-locations");
 			for(it in locations) {
 				if(it.hasField("id")) {
-					var id:Int = cast(it.getProperty("id"), Int);
+					var id:Int = it.getProperty("id");
 					if(_id2location.exists(id)) {
 						removeChild(_id2location.get(id));
 					}
@@ -82,7 +81,7 @@ class WorldData extends LocationData {
 			locations = input.getProperty("=locations");
 			for(it in locations) {
 				if(it.hasField("id")) {
-					var id:Int = cast(it.getProperty("id"), Int);
+					var id:Int = it.getProperty("id");
 					if(_id2location.exists(id)) {
 						_id2location.get(id).readExternal(it);
 					}
