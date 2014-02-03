@@ -30,6 +30,12 @@ class DataBase extends UnitData {
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
 		
+		if(input.hasField("global")) {
+			deserializeGlobal(input.getProperty("global"));
+		}
+	}
+	
+	inline function deserializeGlobal(input:Dynamic) {
 		if(input.hasField("world")) {
 			world.readExternal(input.getProperty("world"));
 		}

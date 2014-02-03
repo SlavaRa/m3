@@ -54,14 +54,7 @@ class SystemController extends BaseController {
 	
 	inline function startUp() server.send(ServerCommand.Start);
 	
-	function onServerMessageReceived(event:ServerControllerEvent) {
-		//{TODO: move to DataBase
-		var message:Dynamic = event.message;
-		if(message.hasField("global")) {
-			cast(data, DataBase).readExternal(message.getProperty("global"));
-		}
-		//}
-	}
+	function onServerMessageReceived(event:ServerControllerEvent) cast(data, DataBase).readExternal(event.message);
 	
 	function onReset(?_) server.send(ServerCommand.Reset);
 	
