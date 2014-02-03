@@ -33,7 +33,6 @@ class DataBase extends UnitData {
 		if(input.hasField("world")) {
 			world.readExternal(input.getProperty("world"));
 		}
-		
 		if(input.hasField("user")) {
 			user.readExternal(input.getProperty('user'));
 		}
