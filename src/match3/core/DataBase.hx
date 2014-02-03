@@ -29,7 +29,9 @@ class DataBase extends UnitData {
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
-		
+		if(input.hasField("prototypes")) {
+			//TODO: implement me
+		}
 		if(input.hasField("global")) {
 			deserializeGlobal(input.getProperty("global"));
 		}
