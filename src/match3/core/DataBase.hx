@@ -53,7 +53,7 @@ using Reflect;
 /**
  * @author SlavaRa
  */
-@:final class PrototypesCollectionData extends UnitProto {
+private class PrototypesCollectionData extends UnitProto {
 	
 	public function new() {
 		super();
