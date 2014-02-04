@@ -20,8 +20,7 @@ class DataBase extends UnitData {
 	override function initialize() {
 		super.initialize();
 		
-		stateMachine = new StateMachine();
-		stateMachine.setState(GameState.Empty);
+		stateMachine = new StateMachine().setState(GameState.Empty);
 		
 		addChild(world = new WorldData());
 		addChild(user = new UserData());
