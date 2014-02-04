@@ -28,9 +28,7 @@ class ScreenView extends ResourceSprite {
 			data = value;
 			
 			if(data.isNotNull()) {
-				var smachine:StateMachine = data.stateMachine;
-				smachine.addAllToAll([GameState.Empty, GameState.Location, GameState.World]);
-				smachine.onChange.add(updateState);
+				data.stateMachine.addAllToAll([GameState.Empty, GameState.Location, GameState.World]).onChange.add(updateState);
 			}
 			
 			updateState();
@@ -39,7 +37,6 @@ class ScreenView extends ResourceSprite {
 	}
 	
 	var _states:Map<EnumValue, DisplayObject>;
-	var _stateMachine:StateMachine;
 	
 	public override function initialize() {
 		super.initialize();
