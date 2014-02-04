@@ -22,7 +22,7 @@ class ScreenView extends ResourceSprite {
 	inline function set_data(value:DataBase) {
 		if(value != data) {
 			if(data.isNotNull()) {
-				data.stateMachine.clear();
+				data.stateMachine.reset();
 			}
 			
 			data = value;
@@ -30,7 +30,6 @@ class ScreenView extends ResourceSprite {
 			if(data.isNotNull()) {
 				data.stateMachine.addAllToAll([GameState.Empty, GameState.Location, GameState.World]).onChange.add(updateState);
 			}
-			
 			updateState();
 		}
 		return data;
