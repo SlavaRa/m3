@@ -1,35 +1,37 @@
 package match3.core;
 import match3.core.Enums.GameState;
+import match3.core.models.PrototypesCollectionData;
 import match3.core.models.UnitData;
 import match3.core.models.UserData;
 import match3.core.models.WorldData;
-import slavara.haxe.core.StateMachine;
 using Reflect;
 
 /**
  * @author SlavaRa
  */
-class DataBase extends UnitData {
+@:final class DataBase extends UnitData {
 	
 	public function new() super();
 	
-	public var stateMachine(default, null):StateMachine;
+	public var prototypes(default, null):PrototypesCollectionData;
 	public var world(default, null):WorldData;
 	public var user(default, null):UserData;
 	
 	override function initialize() {
 		super.initialize();
 		
-		stateMachine = new StateMachine().setState(GameState.Empty);
-		
+		prototypes = new PrototypesCollectionData();
 		addChild(world = new WorldData());
 		addChild(user = new UserData());
+		
+		stateMachine.setState(GameState.Empty);
 	}
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
+		
 		if(input.hasField("prototypes")) {
-			//TODO: implement me
+			prototypes.readExternal(input.getProperty("prototypes"));
 		}
 		if(input.hasField("global")) {
 			deserializeGlobal(input.getProperty("global"));
