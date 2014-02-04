@@ -1,4 +1,6 @@
 package match3.core.models;
+import match3.core.models.prototypes.LocationProto;
+import match3.core.models.prototypes.UnitProto;
 using Reflect;
 
 /**
@@ -6,7 +8,7 @@ using Reflect;
  */
 class LocationData extends UnitData {
 
-	public function new() super();
+	public function new(proto:LocationProto) super(proto);
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);

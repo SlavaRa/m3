@@ -1,6 +1,7 @@
 package match3.core.models;
 import match3.core.DataBase;
 import match3.core.Interfaces.IUnknown;
+import match3.core.models.prototypes.UnitProto;
 import slavara.haxe.core.events.models.DataBaseEvent;
 import slavara.haxe.core.Models.DataValueObjectContainer;
 import slavara.haxe.core.StateMachine;
@@ -13,15 +14,22 @@ using Std;
  */
 class UnitData extends DataValueObjectContainer implements IUnknown {
 
-	function new() {
+	function new(proto:UnitProto) {
 		super();
+		_proto = proto;
 		initialize();
 	}
 	
 	public var stateMachine(default, null):StateMachine;
-	public var id(default, default):Int;
-	public var desc(default, default):String;
+	public var id(get, null):Int;
+	public var desc(get, null):String;
+	
+	var _proto:UnitProto;
 	var _database:DataBase;
+	
+	@:final @:noCompletion function get_id():Int return _proto.id;
+	
+	@:final @:noCompletion function get_desc():String return _proto.desc;
 	
 	function initialize() {
 		stateMachine = new StateMachine();
@@ -32,12 +40,7 @@ class UnitData extends DataValueObjectContainer implements IUnknown {
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
 		
-		if(input.hasField("id")) {
-			id = input.getProperty("id");
-		}
-		if(input.hasField("desc")) {
-			desc = input.getProperty("desc");
-		}
+		//TODO:
 	}
 	
 	@:final @:noCompletion function onAdded(event:DataBaseEvent) {

@@ -1,4 +1,6 @@
 package match3.core.models;
+import match3.core.models.prototypes.UnitProto;
+import match3.core.models.prototypes.WorldProto;
 import slavara.haxe.core.Models.Data;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
 using Reflect;
@@ -9,9 +11,9 @@ using Std;
  */
 class WorldData extends LocationData {
 
-	public function new() super();
+	public function new(proto:WorldProto) super(proto);
 	
-	private var _id2location:Map<Int, LocationData>;
+	var _id2location:Map<Int, LocationData>;
 	
 	override function initialize() {
 		super.initialize();
@@ -61,7 +63,7 @@ class WorldData extends LocationData {
 		if(input.hasField("+locations")) {
 			locations = input.getProperty("+locations");
 			for(it in locations) {
-				var location = new LocationData();
+				var location = new LocationData(null);
 				location.readExternal(it);
 				addChild(location);
 			}

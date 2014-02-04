@@ -1,4 +1,5 @@
 package match3.core.models;
+import match3.core.models.prototypes.UserProto;
 using Reflect;
 
 /**
@@ -6,11 +7,11 @@ using Reflect;
  */
 class UserData extends UnitData {
 
-	public function new() super();
+	public function new(proto:UserProto) super(proto);
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
 		
-		
+		//TODO:
 	}
 }

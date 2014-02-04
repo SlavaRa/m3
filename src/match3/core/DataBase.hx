@@ -1,6 +1,8 @@
 package match3.core;
 import match3.core.Enums.GameState;
-import match3.core.models.PrototypesCollectionData;
+import match3.core.models.prototypes.UnitProto;
+import match3.core.models.prototypes.UserProto;
+import match3.core.models.prototypes.WorldProto;
 import match3.core.models.UnitData;
 import match3.core.models.UserData;
 import match3.core.models.WorldData;
@@ -11,18 +13,18 @@ using Reflect;
  */
 @:final class DataBase extends UnitData {
 	
-	public function new() super();
+	public function new() super(new PrototypesCollectionData());
 	
-	public var prototypes(default, null):PrototypesCollectionData;
 	public var world(default, null):WorldData;
 	public var user(default, null):UserData;
 	
 	override function initialize() {
 		super.initialize();
 		
-		prototypes = new PrototypesCollectionData();
-		addChild(world = new WorldData());
-		addChild(user = new UserData());
+		var prototypes:PrototypesCollectionData = cast(_proto, PrototypesCollectionData);
+		
+		addChild(world = new WorldData(prototypes.world));
+		addChild(user = new UserData(prototypes.user));
 		
 		stateMachine.setState(GameState.Empty);
 	}
@@ -31,7 +33,7 @@ using Reflect;
 		super.deserialize(input);
 		
 		if(input.hasField("prototypes")) {
-			prototypes.readExternal(input.getProperty("prototypes"));
+			_proto.readExternal(input.getProperty("prototypes"));
 		}
 		if(input.hasField("global")) {
 			deserializeGlobal(input.getProperty("global"));
@@ -46,4 +48,19 @@ using Reflect;
 			user.readExternal(input.getProperty('user'));
 		}
 	}
+}
+
+/**
+ * @author SlavaRa
+ */
+@:final class PrototypesCollectionData extends UnitProto {
+	
+	public function new() {
+		super();
+		addChild(world = new WorldProto());
+		addChild(user = new UserProto());
+	}
+	
+	public var world(default, null):WorldProto;
+	public var user(default, null):UserProto;
 }
