@@ -5,7 +5,7 @@ import slavara.haxe.core.Models.DataValueObjectContainer;
 /**
  * @author SlavaRa
  */
-class UnitProto extends DataValueObjectContainer implements IUnknown {
+class UnknownProto extends DataValueObjectContainer implements IUnknown {
 
 	public function new() {
 		super();

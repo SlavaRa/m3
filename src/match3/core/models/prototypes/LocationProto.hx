@@ -3,7 +3,7 @@ package match3.core.models.prototypes;
 /**
  * @author SlavaRa
  */
-class LocationProto extends UnitProto {
+class LocationProto extends UnknownProto {
 
 	public function new() super();
 	

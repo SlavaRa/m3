@@ -1,12 +1,12 @@
 package match3.core.models;
 import match3.core.models.prototypes.LocationProto;
-import match3.core.models.prototypes.UnitProto;
+import match3.core.models.prototypes.UnknownProto;
 using Reflect;
 
 /**
  * @author SlavaRa
  */
-class LocationData extends UnitData {
+class LocationData extends UnknownData {
 
 	public function new(proto:LocationProto) super(proto);
 }

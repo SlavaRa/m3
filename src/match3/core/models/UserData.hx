@@ -5,7 +5,7 @@ using Reflect;
 /**
  * @author SlavaRa
  */
-class UserData extends UnitData {
+class UserData extends UnknownData {
 
 	public function new(proto:UserProto) super(proto);
 	

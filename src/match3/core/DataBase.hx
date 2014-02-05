@@ -1,9 +1,9 @@
 package match3.core;
 import match3.core.Enums.GameState;
-import match3.core.models.prototypes.UnitProto;
+import match3.core.models.prototypes.UnknownProto;
 import match3.core.models.prototypes.UserProto;
 import match3.core.models.prototypes.WorldProto;
-import match3.core.models.UnitData;
+import match3.core.models.UnknownData;
 import match3.core.models.UserData;
 import match3.core.models.WorldData;
 using Reflect;
@@ -11,7 +11,7 @@ using Reflect;
 /**
  * @author SlavaRa
  */
-@:final class DataBase extends UnitData {
+@:final class DataBase extends UnknownData {
 	
 	public function new() super(new PrototypesCollectionData());
 	
@@ -53,7 +53,7 @@ using Reflect;
 /**
  * @author SlavaRa
  */
-private class PrototypesCollectionData extends UnitProto {
+private class PrototypesCollectionData extends UnknownProto {
 	
 	public function new() {
 		super();

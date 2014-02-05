@@ -1,7 +1,7 @@
 package match3.core.models;
 import match3.core.DataBase;
 import match3.core.Interfaces.IUnknown;
-import match3.core.models.prototypes.UnitProto;
+import match3.core.models.prototypes.UnknownProto;
 import slavara.haxe.core.Errors.NullArgumentError;
 import slavara.haxe.core.events.models.DataBaseEvent;
 import slavara.haxe.core.Models.DataValueObjectContainer;
@@ -13,9 +13,9 @@ using Std;
 /**
  * @author SlavaRa
  */
-class UnitData extends DataValueObjectContainer implements IUnknown {
+class UnknownData extends DataValueObjectContainer implements IUnknown {
 
-	function new(proto:UnitProto) {
+	function new(proto:UnknownProto) {
 		#if debug
 		if(proto.isNull()) throw new NullArgumentError("proto");
 		#end
@@ -28,7 +28,7 @@ class UnitData extends DataValueObjectContainer implements IUnknown {
 	public var id(get, null):Int;
 	public var desc(get, null):String;
 	
-	var _proto:UnitProto;
+	var _proto:UnknownProto;
 	var _database:DataBase;
 	
 	@:final @:noCompletion function get_id():Int return _proto.id;

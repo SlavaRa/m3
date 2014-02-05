@@ -3,7 +3,7 @@ package match3.core.models.prototypes;
 /**
  * @author SlavaRa
  */
-class RewardProto extends UnitProto {
+class RewardProto extends UnknownProto {
 
 	public function new() super();
 	
