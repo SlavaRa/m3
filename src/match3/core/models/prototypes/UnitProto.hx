@@ -7,7 +7,10 @@ import slavara.haxe.core.Models.DataValueObjectContainer;
  */
 class UnitProto extends DataValueObjectContainer implements IUnknown {
 
-	public function new() super();
+	public function new() {
+		super();
+		initialize();
+	}
 	
 	public var id(get, null):Int;
 	public var desc(get, null):String;
@@ -18,6 +21,8 @@ class UnitProto extends DataValueObjectContainer implements IUnknown {
 	inline function get_id():Int return _id;
 	
 	inline function get_desc():String return _desc;
+	
+	function initialize() { }
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
