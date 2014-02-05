@@ -1,4 +1,5 @@
 package match3.core.models;
+import flash.errors.ArgumentError;
 import match3.core.models.prototypes.WorldProto;
 import slavara.haxe.core.Models.Data;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
@@ -74,7 +75,7 @@ class WorldData extends LocationData {
 			var location:LocationData = cast(child, LocationData);
 			var id = location.id;
 			if(_id2location.exists(id)) {
-				//TODO: throw error
+				throw new ArgumentError('A LocationData with id = ' + id + ' already exists.');
 			}
 			_id2location.set(id, location);
 		}

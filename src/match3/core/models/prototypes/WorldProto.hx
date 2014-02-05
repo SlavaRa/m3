@@ -1,4 +1,5 @@
 package match3.core.models.prototypes;
+import flash.errors.ArgumentError;
 import slavara.haxe.core.Models.Data;
 using Reflect;
 using Std;
@@ -40,7 +41,7 @@ class WorldProto extends LocationProto {
 			var location:LocationProto = cast(child, LocationProto);
 			var id = location.id;
 			if(id2location.exists(id)) {
-				//TODO: throw error
+				throw new ArgumentError('A LocationProto with id = ' + id + ' already exists.');
 			}
 			id2location.set(id, location);
 		}
