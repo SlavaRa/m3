@@ -18,9 +18,8 @@ class UnknownProto extends DataValueObjectContainer implements IUnknown {
 	@:noCompletion var _id:Int;
 	@:noCompletion var _desc:String;
 	
-	inline function get_id():Int return _id;
-	
-	inline function get_desc():String return _desc;
+	@:noCompletion inline function get_id():Int return _id;
+	@:noCompletion inline function get_desc():String return _desc;
 	
 	function initialize() { }
 	
