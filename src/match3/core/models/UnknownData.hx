@@ -28,12 +28,13 @@ class UnknownData extends DataValueObjectContainer implements IUnknown {
 	public var id(get, null):Int;
 	public var desc(get, null):String;
 	
+	var _id:Int;
+	var _desc:String;
 	var _proto:UnknownProto;
 	var _database:DataBase;
 	
-	@:final @:noCompletion function get_id():Int return _proto.id;
-	
-	@:final @:noCompletion function get_desc():String return _proto.desc;
+	@:noCompletion inline function get_id():Int return _id;
+	@:noCompletion inline function get_desc():String return _desc;
 	
 	function initialize() {
 		stateMachine = new StateMachine();
@@ -44,7 +45,12 @@ class UnknownData extends DataValueObjectContainer implements IUnknown {
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
 		
-		//TODO:
+		if(input.hasField("id")) {
+			_id = input.getProperty("id");
+		}
+		if(input.hasField("desc")) {
+			_desc = input.getProperty("desc");
+		}
 	}
 	
 	@:final @:noCompletion function onAdded(event:DataBaseEvent) {
