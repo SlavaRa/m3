@@ -55,7 +55,7 @@ class WorldProto extends LocationProto {
 			var location:LocationProto = cast(child, LocationProto);
 			var id = location.id;
 			if(id2location.exists(id)) {
-				throw new ArgumentError('A LocationProto with id = ' + id + ' already exists.');
+				throw new ArgumentError("A " + Type.typeof(child) + " with id = " + id + " already exists.");
 			}
 			id2location.set(id, location);
 			return;
@@ -65,7 +65,7 @@ class WorldProto extends LocationProto {
 			var reward:RewardProto = cast(child, RewardProto);
 			var id = reward.id;
 			if(id2reward.exists(id)) {
-				throw new ArgumentError('A RewardProto with id = ' + id + ' already exists.');
+				throw new ArgumentError("A " + Type.typeof(child) + " with id = " + id + " already exists.");
 			}
 			id2reward.set(id, reward);
 			return;
