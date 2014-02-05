@@ -10,13 +10,13 @@ class LocationProto extends UnitProto {
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
 		
-		if(input.getProperty("behavior")) {
+		if(input.getProperty("+behavior")) {
 			//TODO: implement me
 		}
-		if(input.getProperty("units")) {
+		if(input.getProperty("+units")) {
 			//TODO: implement me
 		}
-		if(input.getProperty("rewards")) {
+		if(input.getProperty("+rewards")) {
 			//TODO: implement me
 		}
 	}
