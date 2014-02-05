@@ -30,9 +30,9 @@ class WorldData extends LocationData {
 			var proto:WorldProto = cast(_proto, WorldProto);
 			var locations:Array<Dynamic> = input.getProperty("+locations");
 			for(it in locations) {
-				if(it.hasField("id")) {
-					var id:Int = it.getProperty("id");
-					var location = new LocationData(proto.id2location.get(id));
+				if(it.hasField("proto_id")) {
+					var protoId:Int = it.getProperty("proto_id");
+					var location = new LocationData(proto.id2location.get(protoId));
 					location.readExternal(it);
 					addChild(location);
 				} else {
@@ -75,7 +75,7 @@ class WorldData extends LocationData {
 			var location:LocationData = cast(child, LocationData);
 			var id = location.id;
 			if(_id2location.exists(id)) {
-				throw new ArgumentError('A LocationData with id = ' + id + ' already exists.');
+				throw new ArgumentError("A " + Type.typeof(child) + " with id = " + id + " already exists.");
 			}
 			_id2location.set(id, location);
 		}
