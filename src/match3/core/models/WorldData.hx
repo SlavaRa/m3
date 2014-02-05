@@ -24,7 +24,7 @@ class WorldData extends LocationData {
 		deserializeLocations(input);
 	}
 	
-	@:final @:noCompletion inline function deserializeLocations(input:Dynamic) {
+	@:noCompletion inline function deserializeLocations(input:Dynamic) {
 		if(input.hasField("+locations")) {
 			var proto:WorldProto = cast(_proto, WorldProto);
 			var locations:Array<Dynamic> = input.getProperty("+locations");
