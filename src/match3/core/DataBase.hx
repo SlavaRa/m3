@@ -63,4 +63,15 @@ private class PrototypesCollectionData extends UnitProto {
 	
 	public var world(default, null):WorldProto;
 	public var user(default, null):UserProto;
+	
+	override function deserialize(input:Dynamic) {
+		super.deserialize(input);
+		
+		if(input.hasField("world")) {
+			world.readExternal(input.getProperty("world"));
+		}
+		if(input.hasField("user")) {
+			user.readExternal(input.getProperty('user'));
+		}
+	}
 }
