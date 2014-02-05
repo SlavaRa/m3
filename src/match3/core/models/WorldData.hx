@@ -53,13 +53,6 @@ class WorldData extends LocationData {
 	
 	@:final @:noCompletion inline function deserializeLocations(input:Dynamic) {
 		var locations:Array<Dynamic> = null;
-		if(input.hasField("locations")) {
-			locations = input.getProperty("locations");
-			if(input.hasField("+locations")) {
-				locations = locations.concat(input.getProperty("+locations"));
-			}
-			input.setField("+locations", locations);
-		}
 		if(input.hasField("+locations")) {
 			locations = input.getProperty("+locations");
 			for(it in locations) {
