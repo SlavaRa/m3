@@ -34,7 +34,6 @@ class Main extends BaseSprite {
 			return;
 		}
 		UIBuilder.init();
-		
 		_controller = new SystemController(this);
 	}
 }
