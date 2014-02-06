@@ -1,6 +1,7 @@
 package match3.core.models.prototypes;
 import match3.core.Interfaces.IUnknown;
 import slavara.haxe.core.Models.DataValueObjectContainer;
+using Reflect;
 
 /**
  * @author SlavaRa
