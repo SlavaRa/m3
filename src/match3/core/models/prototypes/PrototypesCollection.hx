@@ -1,4 +1,4 @@
-package match3.core.models;
+package match3.core.models.prototypes;
 import flash.errors.ArgumentError;
 import match3.core.models.prototypes.UnknownProto;
 import slavara.haxe.core.Errors.NullArgumentError;

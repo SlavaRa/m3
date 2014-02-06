@@ -1,5 +1,5 @@
 package match3.core.models.prototypes;
-import match3.core.models.PrototypesCollection.PrototypesCollection;
+import match3.core.models.prototypes.PrototypesCollection;
 using Reflect;
 using Std;
 
