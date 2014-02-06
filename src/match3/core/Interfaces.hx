@@ -1,4 +1,9 @@
 package match3.core;
+import match3.core.models.prototypes.UnknownProto;
+
+interface IPrototypesCollection {
+	function get(id:Int):UnknownProto;
+}
 
 /**
  * @author SlavaRa
