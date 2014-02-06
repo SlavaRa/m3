@@ -1,7 +1,5 @@
 package match3.core.models.prototypes;
 import match3.core.models.prototypes.PrototypesCollection;
-using Reflect;
-using Std;
 
 /**
  * @author SlavaRa
