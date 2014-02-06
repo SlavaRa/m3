@@ -1,6 +1,5 @@
 package match3.core.models.prototypes;
-import flash.errors.ArgumentError;
-import slavara.haxe.core.Models.Data;
+import match3.core.models.PrototypesCollection.PrototypesCollection;
 using Reflect;
 using Std;
 
@@ -11,64 +10,18 @@ class WorldProto extends LocationProto {
 	
 	public function new() super();
 	
-	public var id2location(default, null):Map<Int, LocationProto>;
-	public var id2reward(default, null):Map<Int, RewardProto>;
+	public var locations(default, null):PrototypesCollection<LocationProto>;
+	public var rewards(default, null):PrototypesCollection<RewardProto>;
 	
 	override function initialize() {
 		super.initialize();
-		id2location = new Map();
-		id2reward = new Map();
+		locations = new PrototypesCollection<LocationProto>("locations");
+		rewards = new PrototypesCollection<RewardProto>("rewards");
 	}
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
-		deserializeLocations(input);
-		deserializeRewards(input);
-	}
-	
-	@:noCompletion inline function deserializeLocations(input:Dynamic) {
-		if(input.hasField("+locations")) {
-			var locations:Array<Dynamic> = input.getProperty("+locations");
-			for(it in locations) {
-				var location = new LocationProto();
-				location.readExternal(it);
-				addChild(location);
-			}
-		}
-	}
-	
-	@:noCompletion inline function deserializeRewards(input:Dynamic) {
-		if(input.hasField("+rewards")) {
-			var rewards:Array<Dynamic> = input.getProperty("+rewards");
-			for(it in rewards) {
-				var reward = new RewardProto();
-				reward.readExternal(it);
-				addChild(reward);
-			}
-		}
-	}
-	
-	override function addChildBefore(child:Data) {
-		super.addChildBefore(child);
-		
-		if(child.is(LocationProto)) {
-			var location:LocationProto = cast(child, LocationProto);
-			var id = location.id;
-			if(id2location.exists(id)) {
-				throw new ArgumentError("A " + Type.typeof(child) + " with id = " + id + " already exists.");
-			}
-			id2location.set(id, location);
-			return;
-		}
-		
-		if(child.is(RewardProto)) {
-			var reward:RewardProto = cast(child, RewardProto);
-			var id = reward.id;
-			if(id2reward.exists(id)) {
-				throw new ArgumentError("A " + Type.typeof(child) + " with id = " + id + " already exists.");
-			}
-			id2reward.set(id, reward);
-			return;
-		}
+		locations.readExternal(input);
+		rewards.readExternal(input);
 	}
 }

@@ -32,7 +32,7 @@ class WorldData extends LocationData {
 			for(it in locations) {
 				if(it.hasField("proto_id")) {
 					var protoId:Int = it.getProperty("proto_id");
-					var location = new LocationData(proto.id2location.get(protoId));
+					var location = new LocationData(proto.locations.get(protoId));
 					location.readExternal(it);
 					addChild(location);
 				} else {
