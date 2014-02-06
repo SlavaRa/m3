@@ -1,5 +1,6 @@
 package match3.core.models.prototypes;
 import flash.errors.ArgumentError;
+import match3.core.Interfaces.IPrototypesCollection;
 import match3.core.models.prototypes.UnknownProto;
 import slavara.haxe.core.Errors.NullArgumentError;
 import slavara.haxe.core.Models.Data;
@@ -11,7 +12,7 @@ using Std;
 /**
  * @author SlavaRa
  */
-@:generic class PrototypesCollection<T:({public function new():Void;},UnknownProto)> extends DataValueObjectContainer {
+@:generic class PrototypesCollection<T:({public function new():Void;},UnknownProto)> extends DataValueObjectContainer implements IPrototypesCollection {
 	
 	public function new(inputKey:String) {
 		#if debug
