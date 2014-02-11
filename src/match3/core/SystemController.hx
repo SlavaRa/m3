@@ -45,7 +45,7 @@ class SystemController extends BaseController {
 	}
 	
 	inline function initializeListeners() {
-		server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, this.onServerMessageReceived);
+		server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, onServerMessageReceived);
 		
 		container.addEventListener(GameEvent.RESET, onReset);
 		container.addEventListener(GameEvent.GOTO_EMPTY_SCREEN, onGotoEmptyScreen);
