@@ -1,16 +1,11 @@
 package match3.core;
-import match3.core.models.prototypes.UnknownProto;
-
-interface IPrototypesCollection {
-	function get(id:Int):UnknownProto;
-}
+import slavara.haxe.game.Models.UnknownProto;
 
 /**
  * @author SlavaRa
  */
-interface IUnknown {
-	public var id(get, null):Int;
-	public var desc(get, null):String;
+interface IPrototypesCollection {
+	function get(id:Int):UnknownProto;
 }
 
 /**

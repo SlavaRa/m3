@@ -1,5 +1,6 @@
 package match3.core.models;
-import match3.core.models.prototypes.UnknownProto;
+import slavara.haxe.game.Models.UnknownData;
+import slavara.haxe.game.Models.UnknownProto;
 using Reflect;
 
 /**

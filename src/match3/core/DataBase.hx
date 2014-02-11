@@ -1,11 +1,11 @@
 package match3.core;
 import match3.core.Enums.GameState;
-import match3.core.models.prototypes.UnknownProto;
 import match3.core.models.prototypes.UserProto;
 import match3.core.models.prototypes.WorldProto;
-import match3.core.models.UnknownData;
 import match3.core.models.UserData;
 import match3.core.models.WorldData;
+import slavara.haxe.game.Models.UnknownData;
+import slavara.haxe.game.Models.UnknownProto;
 using Reflect;
 
 /**

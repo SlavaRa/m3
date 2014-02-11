@@ -1,6 +1,6 @@
 package match3.core.models;
-import match3.core.models.prototypes.UnknownProto;
 import match3.core.models.prototypes.WorldProto;
+import slavara.haxe.game.Models.UnknownProto;
 
 /**
  * @author SlavaRa

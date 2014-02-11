@@ -1,10 +1,11 @@
 package match3.core.models;
 import flash.errors.ArgumentError;
 import match3.core.Interfaces.IPrototypesCollection;
-import match3.core.models.prototypes.UnknownProto;
 import slavara.haxe.core.Errors.NullArgumentError;
 import slavara.haxe.core.Models.Data;
 import slavara.haxe.core.Models.DataValueObjectContainer;
+import slavara.haxe.game.Models.UnknownData;
+import slavara.haxe.game.Models.UnknownProto;
 using slavara.haxe.core.utils.Utils.StringUtil;
 using Reflect;
 using Std;
