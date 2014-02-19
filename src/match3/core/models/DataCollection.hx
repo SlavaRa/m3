@@ -1,7 +1,7 @@
 package match3.core.models;
 import flash.errors.ArgumentError;
 import match3.core.Interfaces.IPrototypesCollection;
-import slavara.haxe.core.Errors.NullArgumentError;
+import slavara.haxe.core.Errors.ArgumentNullError;
 import slavara.haxe.core.Models.Data;
 import slavara.haxe.core.Models.DataValueObjectContainer;
 import slavara.haxe.game.Models.UnknownData;
@@ -17,7 +17,7 @@ using Std;
 
 	public function new(prototypes:IPrototypesCollection, inputKey:String) {
 		#if debug
-		if(inputKey.isNullOrEmpty()) throw new NullArgumentError("inputKey");
+		if(inputKey.isNullOrEmpty()) throw new ArgumentNullError("inputKey");
 		#end
 		super();
 		_t = Type.getClass(new T(Type.createEmptyInstance(UnknownProto)));
