@@ -5,5 +5,5 @@ struct LocationProto extends UnknownProto {
 struct WorldProto extends LocationProto {
 	width:int @default:800
 	height:int @default:600
-	locations:LocationProto[] @str2id
+	locations:LocationProto[]
 }
