@@ -1,7 +1,6 @@
 package match3.core.display;
 import match3.core.DataBase;
 import match3.core.factories.ViewFactory.ScreenFactory;
-import slavara.haxe.core.StateMachine;
 import slavara.haxe.core.TypeDefs.DisplayObject;
 import slavara.haxe.core.TypeDefs.ResourceSprite;
 import slavara.haxe.core.utils.Utils.DestroyUtil;
@@ -47,7 +46,7 @@ class ScreenView extends ResourceSprite {
 	}
 	
 	inline function updateState() {
-		var smachine:StateMachine = data.stateMachine;
+		var smachine = data.stateMachine;
 		if(smachine.previousState.isNotNull()) {
 			removeChild(_states.get(smachine.previousState));
 		}
