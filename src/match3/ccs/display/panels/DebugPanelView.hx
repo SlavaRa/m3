@@ -64,10 +64,13 @@ class DebugPanelView extends ResourceSprite {
 		_box = DestroyUtil.destroy(_box);
 	}
 	
-	override function onAddedToStage() {
-		super.onAddedToStage();
+	override function render():Bool {
+		if(!super.render()) {
+			return false;
+		}
 		
 		updateHBox();
+		return true;
 	}
 	
 	inline function updateHBox() {

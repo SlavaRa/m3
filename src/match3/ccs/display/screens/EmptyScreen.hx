@@ -16,27 +16,28 @@ class EmptyScreen extends ResourceSprite {
 	
 	public override function initialize() {
 		super.initialize();
-		
 		initializeDebugLabel();
 	}
 	
 	public override function destroy() {
 		super.destroy();
-		
 		_label = DestroyUtil.destroy(_label);
 	}
 	
-	override function onAddedToStage() {
-		super.onAddedToStage();
+	override function render():Bool {
+		if(!super.render()) {
+			return false;
+		}
 		
 		_label.x = stage.stageWidth - _label.width - 5;
 		_label.y = stage.stageHeight - _label.height;
 		addChild(_label);
+		
+		return true;
 	}
 	
-	override function onRemovedFromStage() {
-		super.onRemovedFromStage();
-		
+	override function clear() {
+		super.clear();
 		removeChild(_label);
 	}
 	

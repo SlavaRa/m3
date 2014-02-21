@@ -19,13 +19,18 @@ class Main extends BaseSprite {
 	
 	public function new() super();	
 	
-	override function onAddedToStage() {
+	override function render():Bool {
+		if(!super.render()) {
+			return false;
+		}
+		
 		stage.addEventListener(flash.events.Event.RESIZE, initializeController);
 		#if ios
 		haxe.Timer.delay(initializeController, 100); // iOS 6
 		#else
 		initializeController();
 		#end
+		return true;
 	}
 	
 	var _controller:SystemController;
