@@ -6,6 +6,4 @@ package match3.ccs.display.screens;
 class LocationScreen extends EmptyScreen {
 	
 	public function new() super();
-	
-	override function getDebugLabelText():String return "Location screen";
 }

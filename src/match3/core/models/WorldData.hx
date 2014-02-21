@@ -14,7 +14,7 @@ class WorldData extends LocationData {
 	
 	override function initialize() {
 		super.initialize();
-		var proto:WorldProto = cast(_proto, WorldProto);
+		var proto:WorldProto = cast(proto, WorldProto);
 		_locations = new DataCollection<LocationData>(proto.locations, "locations");
 	}
 	

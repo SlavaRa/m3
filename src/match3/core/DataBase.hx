@@ -20,7 +20,7 @@ class DataBase extends UnknownData {
 	override function initialize() {
 		super.initialize();
 		
-		var prototypes:PrototypesCollectionData = cast(_proto, PrototypesCollectionData);
+		var prototypes:PrototypesCollectionData = cast(proto, PrototypesCollectionData);
 		
 		addChild(world = new WorldData(prototypes.world));
 		addChild(user = new UserData(prototypes.user));
@@ -30,7 +30,7 @@ class DataBase extends UnknownData {
 		super.deserialize(input);
 		
 		if(input.hasField("prototypes")) {
-			_proto.readExternal(input.getProperty("prototypes"));
+			proto.readExternal(input.getProperty("prototypes"));
 		}
 		if(input.hasField("global")) {
 			deserializeGlobal(input.getProperty("global"));

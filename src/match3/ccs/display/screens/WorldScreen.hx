@@ -1,6 +1,6 @@
 package match3.ccs.display.screens;
 import match3.core.models.WorldData;
-import slavara.haxe.core.Models.Data;
+using slavara.haxe.core.utils.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa
@@ -12,18 +12,12 @@ class WorldScreen extends EmptyScreen {
 		this.data = data;
 	}
 	
-	public var data(null, set):WorldData;
-	
-	inline function set_data(value:WorldData) {
-		if(value != data) {
-			data = value;
+	override function update() {
+		super.update();
+		if(stage.isNull() || data.isNull()) {
+			return;
 		}
-		return data;
+		
+		//draw locations
 	}
-	
-	public override function destroy() {
-		super.destroy();
-	}
-	
-	override function getDebugLabelText():String return "World screen";
 }

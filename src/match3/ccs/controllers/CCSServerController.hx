@@ -33,6 +33,8 @@ class CCSServerController extends ServerController {
 			s = "{";
 			s += "\"prototypes\":{";
 			s += "\"world\":{";
+			s += "\"id\":" + d.getProperty("id") + ",";
+			s += "\"desc\":\"" + d.getProperty("desc") + "\",";
 			s += "\"+locations\":[";
 			for(it in locations) Assets.loadText(it.replace("@", prototypes) + ext, function(v) s += v);
 			s += "]";
