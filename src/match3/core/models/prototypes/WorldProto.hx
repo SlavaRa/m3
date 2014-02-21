@@ -1,5 +1,5 @@
 package match3.core.models.prototypes;
-import match3.core.models.prototypes.PrototypesCollection;
+import slavara.haxe.game.Models.PrototypesCollection;
 
 /**
  * @author SlavaRa
