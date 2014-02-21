@@ -1,8 +1,10 @@
 package match3.core;
+import match3.core.models.prototypes.RewardProto;
 import match3.core.models.prototypes.UserProto;
 import match3.core.models.prototypes.WorldProto;
 import match3.core.models.UserData;
 import match3.core.models.WorldData;
+import slavara.haxe.game.Models.PrototypesCollection;
 import slavara.haxe.game.Models.UnknownData;
 import slavara.haxe.game.Models.UnknownProto;
 using Reflect;
@@ -57,10 +59,12 @@ private class PrototypesCollectionData extends UnknownProto {
 		super();
 		addChild(world = new WorldProto());
 		addChild(user = new UserProto());
+		addChild(rewards = new PrototypesCollection<RewardProto>("rewards"));
 	}
 	
 	public var world(default, null):WorldProto;
 	public var user(default, null):UserProto;
+	public var rewards(default, null):PrototypesCollection<RewardProto>;
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
@@ -70,6 +74,9 @@ private class PrototypesCollectionData extends UnknownProto {
 		}
 		if(input.hasField("user")) {
 			user.readExternal(input.getProperty('user'));
+		}
+		if(input.hasField("rewards")) {
+			rewards.readExternal(input.getProperty("rewards"));
 		}
 	}
 }
