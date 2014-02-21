@@ -8,7 +8,7 @@ import slavara.haxe.core.TypeDefs.DisplayObject;
 class ScreenFactory {
 	public function new() {}
 	
-	public function getScreens(data):Map<EnumValue, DisplayObject> {
+	public function getScreens():Map<EnumValue, DisplayObject> {
 		throw new NotImplementedError();
 		return null;
 	}

@@ -3,7 +3,6 @@ import match3.ccs.Enums.GameState;
 import match3.ccs.Events.GameEvent;
 import match3.ccs.factories.CCSScreenFactory;
 import match3.ccs.models.CCSUniverse;
-import match3.core.DataBase;
 import match3.core.Enums.ServerCommand;
 import match3.core.factories.ViewFactory.ScreenFactory;
 import match3.core.SystemController;
@@ -26,11 +25,11 @@ class CCSSystemController extends SystemController {
 	
 	public override function getServerType():Class<Dynamic> return CCSServerController;
 	
-	public override function createScreenFactory():ScreenFactory return new CCSScreenFactory();
+	public override function createScreenFactory():ScreenFactory return new CCSScreenFactory(cast(data, CCSUniverse));
 	
 	function onReset(?_) server.send(ServerCommand.Reset);
 	
-	function onGotoEmptyScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.Empty);
+	function onGotoEmptyScreen(?_) cast(data, CCSUniverse).stateMachine.setState(GameState.Empty);
 	
-	function onGotoWorldScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.World);	
+	function onGotoWorldScreen(?_) cast(data, CCSUniverse).stateMachine.setState(GameState.World);	
 }

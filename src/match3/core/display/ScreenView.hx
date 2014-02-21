@@ -27,7 +27,7 @@ class ScreenView extends ResourceSprite {
 			data = value;
 			
 			if(data.isNotNull()) {
-				_states = _factory.getScreens(data);
+				_states = _factory.getScreens();
 				data.stateMachine.onChange.add(updateState);
 				updateState();
 			}
