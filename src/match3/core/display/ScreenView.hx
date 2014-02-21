@@ -1,6 +1,6 @@
 package match3.core.display;
-import match3.core.DataBase;
 import match3.core.factories.ViewFactory.ScreenFactory;
+import slavara.haxe.core.Interfaces.IStateMachineHolder;
 import slavara.haxe.core.TypeDefs.DisplayObject;
 import slavara.haxe.core.TypeDefs.ResourceSprite;
 import slavara.haxe.core.utils.Utils.DestroyUtil;
@@ -16,9 +16,9 @@ class ScreenView extends ResourceSprite {
 		_factory = factory;
 	}
 	
-	public var data(null, set):DataBase;
+	public var data(null, set):IStateMachineHolder;
 	
-	inline function set_data(value:DataBase) {
+	inline function set_data(value:IStateMachineHolder) {
 		if(value != data) {
 			if(data.isNotNull()) {
 				data.stateMachine.reset();

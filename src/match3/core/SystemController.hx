@@ -45,11 +45,9 @@ class SystemController extends BaseController {
 		panels = new PanelsController(this);
 	}
 	
-	function initializeListeners() {
-		server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, onServerMessageReceived);
-	}
-	
 	function startUp() server.send(ServerCommand.Start);
+	
+	function initializeListeners() server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, onServerMessageReceived);
 	
 	function onServerMessageReceived(event:ServerControllerEvent) cast(data, DataBase).readExternal(event.message);
 }
