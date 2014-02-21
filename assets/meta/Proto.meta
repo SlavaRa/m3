@@ -1,0 +1,7 @@
+struct LocationProto extends UnknownProto {
+	
+}
+
+struct WorldProto extends LocationProto {
+	locations : LocationProto[] @str2id
+}
