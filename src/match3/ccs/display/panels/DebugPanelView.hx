@@ -1,6 +1,6 @@
-package match3.core.display.panels;
+package match3.ccs.display.panels;
 import flash.events.MouseEvent;
-import match3.core.Events.GameEvent;
+import match3.ccs.Events.GameEvent;
 import match3.core.Utils.TextFieldUtils;
 import ru.stablex.ui.skins.Paint;
 import ru.stablex.ui.UIBuilder;

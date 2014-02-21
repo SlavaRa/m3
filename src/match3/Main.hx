@@ -1,5 +1,6 @@
 package match3;
 import flash.Lib;
+import match3.ccs.controllers.CCSSystemController;
 import match3.core.SystemController;
 import ru.stablex.ui.UIBuilder;
 import slavara.haxe.core.TypeDefs.BaseSprite;
@@ -34,6 +35,6 @@ class Main extends BaseSprite {
 			return;
 		}
 		UIBuilder.init();
-		_controller = new SystemController(this);
+		_controller = new CCSSystemController(this);
 	}
 }

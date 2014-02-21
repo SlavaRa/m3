@@ -1,5 +1,4 @@
 package match3.core;
-import match3.core.Enums.GameState;
 import match3.core.models.prototypes.UserProto;
 import match3.core.models.prototypes.WorldProto;
 import match3.core.models.UserData;
@@ -11,7 +10,7 @@ using Reflect;
 /**
  * @author SlavaRa
  */
-@:final class DataBase extends UnknownData {
+class DataBase extends UnknownData {
 	
 	public function new() super(new PrototypesCollectionData());
 	
@@ -25,8 +24,6 @@ using Reflect;
 		
 		addChild(world = new WorldData(prototypes.world));
 		addChild(user = new UserData(prototypes.user));
-		
-		stateMachine.setState(GameState.Empty);
 	}
 	
 	override function deserialize(input:Dynamic) {

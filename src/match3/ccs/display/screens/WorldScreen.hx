@@ -1,4 +1,4 @@
-package match3.core.display.screens;
+package match3.ccs.display.screens;
 
 /**
  * @author SlavaRa

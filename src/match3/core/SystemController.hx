@@ -1,5 +1,4 @@
 package match3.core;
-import flash.display.DisplayObjectContainer;
 import match3.core.controllers.PanelsController;
 import match3.core.controllers.ScreenController;
 import match3.core.controllers.ServerController;
@@ -7,11 +6,11 @@ import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
 import match3.core.DataBase;
-import match3.core.Enums.GameState;
 import match3.core.Enums.ServerCommand;
-import match3.core.Events.GameEvent;
 import match3.core.Events.ServerControllerEvent;
+import match3.core.factories.ViewFactory.ScreenFactory;
 import slavara.haxe.core.controllers.BaseController;
+import slavara.haxe.core.TypeDefs.DisplayObjectContainer;
 using Reflect;
 
 /**
@@ -19,7 +18,7 @@ using Reflect;
  */
 class SystemController extends BaseController {
 	
-	public function new(container:DisplayObjectContainer) super(container, new DataBase());
+	public function new(container:DisplayObjectContainer, data:DataBase) super(container, data);
 	
 	public var server(default, null):ServerController;
 	public var sound(default, null):SoundController;
@@ -35,7 +34,9 @@ class SystemController extends BaseController {
 		startUp();
 	}
 	
-	inline function initializeControllers() {
+	public function getScreenFactory():ScreenFactory return new ScreenFactory();
+	
+	function initializeControllers() {
 		server = new ServerController(this);
 		sound = new SoundController(this);
 		stat = new StatController(this);
@@ -44,21 +45,11 @@ class SystemController extends BaseController {
 		panels = new PanelsController(this);
 	}
 	
-	inline function initializeListeners() {
+	function initializeListeners() {
 		server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, onServerMessageReceived);
-		
-		container.addEventListener(GameEvent.RESET, onReset);
-		container.addEventListener(GameEvent.GOTO_EMPTY_SCREEN, onGotoEmptyScreen);
-		container.addEventListener(GameEvent.GOTO_WORLD_SCREEN, onGotoWorldScreen);
 	}
 	
-	inline function startUp() server.send(ServerCommand.Start);
+	function startUp() server.send(ServerCommand.Start);
 	
 	function onServerMessageReceived(event:ServerControllerEvent) cast(data, DataBase).readExternal(event.message);
-	
-	function onReset(?_) server.send(ServerCommand.Reset);
-	
-	function onGotoEmptyScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.Empty);
-	
-	function onGotoWorldScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.World);	
 }

@@ -1,4 +1,4 @@
-package match3.core.display.screens;
+package match3.ccs.display.screens;
 import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import match3.core.Utils.TextFieldUtils;

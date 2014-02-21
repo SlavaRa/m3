@@ -1,11 +1,8 @@
 package match3.core;
 
-enum GameState {
-	Empty;
-	World;
-	Location;
-}
-
+/**
+ * @author SlavaRa
+ */
 enum ServerCommand {
 	Start;
 	Reset;
