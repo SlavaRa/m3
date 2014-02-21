@@ -24,6 +24,8 @@ class CCSSystemController extends SystemController {
 		container.addEventListener(GameEvent.GOTO_WORLD_SCREEN, onGotoWorldScreen);
 	}
 	
+	public override function getServerType():Class<Dynamic> return CCSServerController;
+	
 	public override function createScreenFactory():ScreenFactory return new CCSScreenFactory();
 	
 	function onReset(?_) server.send(ServerCommand.Reset);

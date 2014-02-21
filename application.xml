@@ -19,6 +19,9 @@
 	<haxelib name="openfl" />
 	<haxelib name="stablexui" />
 	
+	<assets path="assets" include="*" />
+	<assets path="assets/prototypes/ccs" rename="prototypes" include="*.conf.js" />
+	
 	<haxeflag name="-swf-lib" value="D:/haxe/slavara-core-hx/libs/datahelpers.swf" if="flash" />
 	<haxeflag name="-dce std" if="haxe3" />
 </project>

@@ -35,10 +35,12 @@ class SystemController extends BaseController {
 		server.send(ServerCommand.Start);
 	}
 	
+	public function getServerType():Class<Dynamic> return ServerController;
+	
 	public function createScreenFactory():ScreenFactory return new ScreenFactory();
 	
 	function initializeControllers() {
-		server = new ServerController(this);
+		server = Type.createInstance(getServerType(), [this]);
 		sound = new SoundController(this);
 		stat = new StatController(this);
 		user = new UserController(this);

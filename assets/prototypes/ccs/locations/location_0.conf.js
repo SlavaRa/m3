@@ -1,4 +1,5 @@
 {
 	"class":"LocationProto",
-	"desc":"Test location",
+	"id":0, 
+	"desc":"Test location"
 }

@@ -8,14 +8,14 @@ class ServerControllerEvent extends ControllerEvent {
 	
 	public static inline var MESSAGE_RECEIVED = "messageReceived";
 	
-	public function new(type:String, ?cancelable:Bool, message:Dynamic) {
-		super(type, cancelable);
+	public function new(type:String, message:Dynamic) {
+		super(type);
 		this.message = message;
 	}
 	
 	public var message(default, null):Dynamic;
 	
-	public override function clone():Event return new ServerControllerEvent(type, cancelable, message);
+	public override function clone():Event return new ServerControllerEvent(type, message);
 }
 
 /**
@@ -23,7 +23,7 @@ class ServerControllerEvent extends ControllerEvent {
  */
 class ControllerEvent extends Event {
 	
-	public function new(type:String, ?cancelable:Bool) super(type, false, cancelable);
+	public function new(type:String) super(type);
 	
-	public override function clone():Event return new ControllerEvent(type, cancelable);
+	public override function clone():Event return new ControllerEvent(type);
 }
