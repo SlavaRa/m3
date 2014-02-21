@@ -49,6 +49,7 @@ class DataBase extends UnknownData {
 
 /**
  * @author SlavaRa
+ * @private
  */
 private class PrototypesCollectionData extends UnknownProto {
 	
