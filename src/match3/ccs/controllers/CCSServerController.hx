@@ -1,5 +1,6 @@
 package match3.ccs.controllers;
 import haxe.Json;
+import haxe.Log;
 import match3.core.controllers.ServerController;
 import match3.core.Enums.ServerCommand;
 import match3.core.Events.ServerControllerEvent;
@@ -18,8 +19,7 @@ class CCSServerController extends ServerController {
 	public override function send(command:ServerCommand, ?data:Dynamic, ?onResponseReceived:Dynamic -> Void, ?onResponseSavedData:Dynamic) {
 		switch (command) {
 			case ServerCommand.Start: start();
-			case ServerCommand.Reset:
-			default:
+			case ServerCommand.Reset: Log.trace("reset");
 		}
 	}
 	
