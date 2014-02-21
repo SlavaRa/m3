@@ -34,7 +34,7 @@ class SystemController extends BaseController {
 		startUp();
 	}
 	
-	public function getScreenFactory():ScreenFactory return new ScreenFactory();
+	public function createScreenFactory():ScreenFactory return new ScreenFactory();
 	
 	function initializeControllers() {
 		server = new ServerController(this);
@@ -45,7 +45,7 @@ class SystemController extends BaseController {
 		panels = new PanelsController(this);
 	}
 	
-	function startUp() server.send(ServerCommand.Start);
+	inline function startUp() server.send(ServerCommand.Start);
 	
 	function initializeListeners() server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, onServerMessageReceived);
 	

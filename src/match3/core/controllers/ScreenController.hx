@@ -3,7 +3,6 @@ import match3.core.DataBase;
 import match3.core.display.ScreenView;
 import match3.core.SystemController;
 import slavara.haxe.core.controllers.BaseController.AbstractController;
-import slavara.haxe.core.controllers.BaseController.IBaseController;
 import slavara.haxe.core.controllers.BaseController.IController;
 
 /**
@@ -20,7 +19,7 @@ class ScreenController extends AbstractController {
 		
 		var system:SystemController = cast(baseController, SystemController);
 		
-		system.container.addChild(_view = new ScreenView(system.getScreenFactory()));
+		system.container.addChild(_view = new ScreenView(system.createScreenFactory()));
 		_view.data = cast(data, DataBase);
 	}
 }
