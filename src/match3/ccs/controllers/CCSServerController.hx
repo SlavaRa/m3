@@ -1,6 +1,5 @@
 package match3.ccs.controllers;
 import haxe.Json;
-import haxe.Log;
 import match3.core.controllers.ServerController;
 import match3.core.Enums.ServerCommand;
 import match3.core.Events.ServerControllerEvent;
@@ -19,6 +18,7 @@ class CCSServerController extends ServerController {
 	public override function send(command:ServerCommand, ?data:Dynamic, ?onResponseReceived:Dynamic -> Void, ?onResponseSavedData:Dynamic) {
 		switch (command) {
 			case ServerCommand.Start: start();
+			case ServerCommand.Reset:
 			default:
 		}
 	}
@@ -36,7 +36,14 @@ class CCSServerController extends ServerController {
 			s += "\"id\":" + d.getProperty("id") + ",";
 			s += "\"desc\":\"" + d.getProperty("desc") + "\",";
 			s += "\"+locations\":[";
-			for(it in locations) Assets.loadText(it.replace("@", prototypes) + ext, function(v) s += v);
+			for(i in 0...locations.length) {
+				var it = locations[i];
+				Assets.loadText(it.replace("@", prototypes) + ext, if(i < locations.length - 1) {
+					function(v) s += v + ",";
+				} else {
+					function(v) s += v;
+				});
+			}
 			s += "]";
 			s += "}";
 			s += "}";
@@ -49,7 +56,12 @@ class CCSServerController extends ServerController {
 		s += "\"world\":{";
 		s += "\"proto_id\":0,";
 		s += "\"+locations\":[";
-		s += "{\"proto_id\":0}";
+		s += "{\"id\":0,\"proto_id\":0},";
+		s += "{\"id\":1,\"proto_id\":0},";
+		s += "{\"id\":2,\"proto_id\":0},";
+		s += "{\"id\":3,\"proto_id\":0},";
+		s += "{\"id\":4,\"proto_id\":0},";
+		s += "{\"id\":5,\"proto_id\":0}";
 		s += "]";
 		s += "}";
 		s += "}";

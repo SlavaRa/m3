@@ -41,5 +41,6 @@ class Main extends BaseSprite {
 		}
 		UIBuilder.init();
 		_controller = new CCSSystemController(this);
+		_controller.start();
 	}
 }

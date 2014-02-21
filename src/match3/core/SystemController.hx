@@ -31,13 +31,13 @@ class SystemController extends BaseController {
 		super.initialize();
 		initializeControllers();
 		initializeListeners();
-		
-		server.send(ServerCommand.Start);
 	}
 	
 	public function getServerType():Class<Dynamic> return ServerController;
 	
 	public function createScreenFactory():ScreenFactory return new ScreenFactory();
+	
+	public function start() server.send(ServerCommand.Start);
 	
 	function initializeControllers() {
 		server = Type.createInstance(getServerType(), [this]);

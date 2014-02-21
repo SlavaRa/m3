@@ -27,6 +27,11 @@ class CCSSystemController extends SystemController {
 	
 	public override function createScreenFactory():ScreenFactory return new CCSScreenFactory(cast(data, CCSUniverse));
 	
+	public override function start() {
+		super.start();
+		cast(data, CCSUniverse).stateMachine.setState(GameState.World);
+	}
+	
 	function onReset(?_) server.send(ServerCommand.Reset);
 	
 	function onGotoEmptyScreen(?_) cast(data, CCSUniverse).stateMachine.setState(GameState.Empty);
