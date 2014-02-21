@@ -60,6 +60,5 @@ class SystemController extends BaseController {
 	
 	function onGotoEmptyScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.Empty);
 	
-	function onGotoWorldScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.World);
-	
+	function onGotoWorldScreen(?_) cast(data, DataBase).stateMachine.setState(GameState.World);	
 }
