@@ -13,7 +13,7 @@ class WorldProto extends LocationProto {
 	override function initialize() {
 		super.initialize();
 		locations = new PrototypesCollection<LocationProto>("locations");
-		
+	}
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
