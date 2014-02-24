@@ -16,26 +16,20 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="src" />
-    <class path="test" />
-    <class path="D:\haxe\slavara-core-hx\src" />
-    <class path="bin\flash\haxe" />
+    <class path="." />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="tools=1.2.9&#xA;display&#xA;web" />
+    <option directives="" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="True" />
-    <option additional="--no-output&#xA;-swf-lib D:/haxe/slavara-core-hx/libs/datahelpers.swf&#xA;-dce std&#xA;-swf-version 11.2&#xA;#--remap nme:flash" />
+    <option additional="" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>
-    <library name="munit" />
-    <library name="msignal" />
-    <library name="openfl" />
-    <library name="stablexui" />
+    <!-- example: <library name="..." /> -->
   </haxelib>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>

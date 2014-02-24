@@ -25,9 +25,7 @@ class Main extends BaseSprite {
 	}
 	
 	override function render():Bool {
-		if(!super.render()) {
-			return false;
-		}
+		if(!super.render()) return false;
 		
 		#if ios
 		haxe.Timer.delay(initializeController, 100);
