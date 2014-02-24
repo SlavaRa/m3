@@ -35,10 +35,7 @@ class EmptyScreen extends ResourceSprite {
 	}
 	
 	override function render():Bool {
-		if(!super.render()) {
-			return false;
-		}
-		
+		if(!super.render())  return false;
 		if(_label.isNull()) {
 			_label = new TextField();
 			_label.defaultTextFormat = TextFieldUtils.getServiceTextFormat();
@@ -51,10 +48,7 @@ class EmptyScreen extends ResourceSprite {
 	
 	override function update() {
 		super.update();
-		if(stage.isNull() || data.isNull()) {
-			return;
-		}
-		
+		if(stage.isNull() || data.isNull()) return;
 		if(_label.isNotNull()) {
 			_label.autoSize = TextFieldAutoSize.LEFT;
 			_label.text = !data.proto.desc.isNullOrEmpty() ? data.proto.desc : "";
