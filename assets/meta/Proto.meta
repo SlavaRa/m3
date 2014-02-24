@@ -1,5 +1,7 @@
+unclude Resource
+
 struct LocationProto extends UnknownProto {
-	
+	asset:ResRef
 }
 
 struct WorldProto extends LocationProto {

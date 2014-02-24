@@ -1,0 +1,7 @@
+struct ResRef extends UnknownProto {
+	link:string
+}
+
+strut SWFResRef extends ResRef {
+	swf:string
+}

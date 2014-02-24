@@ -1,9 +1,7 @@
 package match3;
 import flash.Lib;
 import match3.ccs.controllers.CCSSystemController;
-import match3.core.SystemController;
 import ru.stablex.ui.UIBuilder;
-import slavara.haxe.core.Errors.ArgumentNullError;
 import slavara.haxe.core.TypeDefs.BaseSprite;
 using slavara.haxe.core.utils.Utils.ValidateUtil;
 
@@ -34,7 +32,7 @@ class Main extends BaseSprite {
 		return true;
 	}
 	
-	var _controller:SystemController;
+	var _controller:CCSSystemController;
 	
 	function initializeController(?_) {
 		if(_controller.isNotNull()) {
