@@ -1,9 +1,7 @@
 package match3;
 import flash.Lib;
 import match3.ccs.controllers.CCSSystemController;
-import ru.stablex.ui.UIBuilder;
 import slavara.haxe.core.TypeDefs.BaseSprite;
-using slavara.haxe.core.utils.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa
@@ -18,28 +16,26 @@ class Main extends BaseSprite {
 	
 	public function new() super();	
 	
+	var _controller:CCSSystemController;
+	
+	public override function initialize() {
+		super.initialize();
+		ru.stablex.ui.UIBuilder.init();
+		_controller = new CCSSystemController(this);
+	}
+	
 	override function render():Bool {
 		if(!super.render()) {
 			return false;
 		}
 		
-		stage.addEventListener(flash.events.Event.RESIZE, initializeController);
 		#if ios
-		haxe.Timer.delay(initializeController, 100); // iOS 6
+		haxe.Timer.delay(initializeController, 100);
 		#else
 		initializeController();
 		#end
 		return true;
 	}
 	
-	var _controller:CCSSystemController;
-	
-	function initializeController(?_) {
-		if(_controller.isNotNull()) {
-			return;
-		}
-		UIBuilder.init();
-		_controller = new CCSSystemController(this);
-		_controller.start();
-	}
+	function initializeController(?_) _controller.start();
 }
