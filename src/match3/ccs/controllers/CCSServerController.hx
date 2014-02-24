@@ -47,8 +47,7 @@ class CCSServerController extends ServerController {
 		s += "{\"id\":1,\"proto_id\":0},";
 		s += "{\"id\":2,\"proto_id\":0},";
 		s += "{\"id\":3,\"proto_id\":0},";
-		s += "{\"id\":4,\"proto_id\":0},";
-		s += "{\"id\":5,\"proto_id\":0}";
+		s += "{\"id\":4,\"proto_id\":0}";
 		s += "]";
 		s += "}";
 		s += "}";
