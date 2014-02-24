@@ -7,7 +7,7 @@ import ru.stablex.ui.UIBuilder;
 import ru.stablex.ui.widgets.Button;
 import ru.stablex.ui.widgets.HBox;
 import slavara.haxe.core.TypeDefs.ResourceSprite;
-import slavara.haxe.core.utils.Utils.DestroyUtil;
+import slavara.haxe.core.Utils.DestroyUtil;
 
 /**
  * @author SlavaRa

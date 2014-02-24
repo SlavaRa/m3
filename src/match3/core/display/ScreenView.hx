@@ -3,8 +3,8 @@ import match3.core.factories.ViewFactory.ScreenFactory;
 import slavara.haxe.core.Interfaces.IStateMachineHolder;
 import slavara.haxe.core.TypeDefs.DisplayObject;
 import slavara.haxe.core.TypeDefs.ResourceSprite;
-import slavara.haxe.core.utils.Utils.DestroyUtil;
-using slavara.haxe.core.utils.Utils.ValidateUtil;
+import slavara.haxe.core.Utils.DestroyUtil;
+using slavara.haxe.core.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa

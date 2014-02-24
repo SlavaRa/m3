@@ -2,7 +2,7 @@ package match3.ccs.display.screens.world;
 import match3.ccs.display.screens.EmptyScreen;
 import match3.core.models.prototypes.WorldProto;
 import match3.core.models.WorldData;
-using slavara.haxe.core.utils.Utils.ValidateUtil;
+using slavara.haxe.core.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa

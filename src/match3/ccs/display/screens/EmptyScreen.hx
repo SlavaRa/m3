@@ -3,10 +3,10 @@ import flash.text.TextField;
 import flash.text.TextFieldAutoSize;
 import match3.core.Utils.TextFieldUtils;
 import slavara.haxe.core.TypeDefs.ResourceSprite;
-import slavara.haxe.core.utils.Utils.DestroyUtil;
+import slavara.haxe.core.Utils.DestroyUtil;
 import slavara.haxe.game.Models.UnknownData;
-using slavara.haxe.core.utils.Utils.ValidateUtil;
-using slavara.haxe.core.utils.Utils.StringUtil;
+using slavara.haxe.core.Utils.ValidateUtil;
+using slavara.haxe.core.Utils.StringUtil;
 
 /**
  * @author SlavaRa
