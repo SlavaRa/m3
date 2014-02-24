@@ -10,16 +10,16 @@ class WorldData extends LocationData {
 
 	public function new(proto:UnknownProto) super(proto);
 	
-	var _locations:DataCollection<LocationData>;
+	public var locations(default, null):DataCollection<LocationData>;
 	
 	override function initialize() {
 		super.initialize();
 		var proto:WorldProto = cast(proto, WorldProto);
-		_locations = new DataCollection<LocationData>(proto.locations, "locations");
+		locations = new DataCollection<LocationData>(proto.locations, "locations");
 	}
 	
 	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
-		_locations.readExternal(input);
+		locations.readExternal(input);
 	}
 }
