@@ -24,31 +24,18 @@ class CCSServerController extends ServerController {
 	}
 	
 	function start() {
-		var prototypes = "prototypes/";
+		var prototypes = "proto/";
 		var ext = ".conf.js";
 		Assets.loadText("@worlds/world_0".replace("@", prototypes) + ext, function(s) {
 			var d:Dynamic = Json.parse(s);
-			var locations:Array<String> = d.getProperty("locations");
-			
-			s = "{";
-			s += "\"prototypes\":{";
-			s += "\"world\":{";
-			s += "\"id\":%ID%,".replace("%ID%", d.getProperty("id"));
-			s += "\"desc\":\"%DESC%\",".replace("%DESC%", d.getProperty("desc"));
-			s += "\"+locations\":[";
-			for(i in 0...locations.length) {
-				var it = locations[i];
-				Assets.loadText(it.replace("@", prototypes) + ext, if(i < locations.length - 1) {
-					function(v) s += v + ",";
-				} else {
-					function(v) s += v;
-				});
+			var locations:Array<Dynamic> = [];
+			var locationsLinks:Array<String> = d.getProperty("locations");
+			for(it in locationsLinks) {
+				Assets.loadText(it.replace("@", prototypes) + ext, function(v) locations.push(Json.parse(v)));
 			}
-			s += "]";
-			s += "}";
-			s += "}";
-			s += "}";
-			dispatchEvent(new ServerControllerEvent(ServerControllerEvent.MESSAGE_RECEIVED, Json.parse(s)));
+			d.deleteField("locations");
+			d.setProperty("+locations", locations);
+			dispatchEvent(new ServerControllerEvent(ServerControllerEvent.MESSAGE_RECEIVED, { "prototypes": { "world":d } } ));
 		});
 		
 		var s = "{";
