@@ -43,7 +43,7 @@ class CCSServerController extends ServerController {
 		s += "\"world\":{";
 		s += "\"proto_id\":0,";
 		s += "\"+locations\":[";
-		s += "{\"id\":0,\"proto_id\":0},";
+		s += "{\"id\":0,\"proto_id\":0, \"is_available\":1},";
 		s += "{\"id\":1,\"proto_id\":0},";
 		s += "{\"id\":2,\"proto_id\":0},";
 		s += "{\"id\":3,\"proto_id\":0},";
