@@ -22,7 +22,7 @@ class CCSScreenFactory extends ScreenFactory {
 		return [
 			GameState.Empty => new EmptyScreen(),
 			GameState.World => new WorldScreen(_data.world),
-			GameState.Location => new LocationScreen(),
+			GameState.Location => new LocationScreen(_data.world),
 		];
 	}
 }
