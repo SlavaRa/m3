@@ -13,7 +13,7 @@ class LocationData extends UnknownData {
 	
 	public var isAvailable(default, null):Bool;
 	
-	private override function deserialize(input:Dynamic) {
+	override function deserialize(input:Dynamic) {
 		super.deserialize(input);
 		
 		var changed = false;

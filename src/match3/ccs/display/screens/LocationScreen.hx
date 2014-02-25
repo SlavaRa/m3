@@ -21,7 +21,7 @@ class LocationScreen extends EmptyScreen {
 		return true;
 	}
 	
-	override private function update() {
+	override function update() {
 		super.update();
 		if(stage.isNull() || data.isNull()) return;
 		throw new NotImplementedError();
