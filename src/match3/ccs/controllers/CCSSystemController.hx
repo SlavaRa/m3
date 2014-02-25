@@ -5,6 +5,7 @@ import match3.ccs.factories.CCSScreenFactory;
 import match3.ccs.models.CCSUniverse;
 import match3.core.Enums.ServerCommand;
 import match3.core.factories.ViewFactory.ScreenFactory;
+import match3.core.models.LocationData;
 import match3.core.SystemController;
 import slavara.haxe.core.TypeDefs.DisplayObjectContainer;
 
@@ -21,6 +22,7 @@ class CCSSystemController extends SystemController {
 		container.addEventListener(GameEvent.RESET, onReset);
 		container.addEventListener(GameEvent.GOTO_EMPTY_SCREEN, onGotoEmptyScreen);
 		container.addEventListener(GameEvent.GOTO_WORLD_SCREEN, onGotoWorldScreen);
+		container.addEventListener(GameEvent.GOTO_LOCATION_SCREEN, onGotoLocationScreen);
 	}
 	
 	public override function getServerType():Class<Dynamic> return CCSServerController;
@@ -36,5 +38,10 @@ class CCSSystemController extends SystemController {
 	
 	function onGotoEmptyScreen(?_) cast(data, CCSUniverse).stateMachine.setState(GameState.Empty);
 	
-	function onGotoWorldScreen(?_) cast(data, CCSUniverse).stateMachine.setState(GameState.World);	
+	function onGotoWorldScreen(?_) cast(data, CCSUniverse).stateMachine.setState(GameState.World);
+	
+	function onGotoLocationScreen(event:GameEvent) {
+		var data:LocationData = cast(event.data, LocationData);
+		//TODO: code here
+	}
 }
