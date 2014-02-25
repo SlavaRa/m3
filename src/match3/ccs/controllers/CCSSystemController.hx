@@ -40,8 +40,5 @@ class CCSSystemController extends SystemController {
 	
 	function onGotoWorldScreen(?_) cast(data, CCSUniverse).stateMachine.setState(GameState.World);
 	
-	function onGotoLocationScreen(event:GameEvent) {
-		var data:LocationData = cast(event.data, LocationData);
-		//TODO: code here
-	}
+	function onGotoLocationScreen(event:GameEvent) cast(data, CCSUniverse).gotoLocation(cast(event.data, LocationData));
 }

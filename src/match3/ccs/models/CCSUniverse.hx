@@ -14,4 +14,8 @@ class CCSUniverse extends DataBase {
 		stateMachine.addAllToAll([GameState.Empty, GameState.World, GameState.Location]);
 		stateMachine.setState(GameState.Empty);
 	}
+	
+	public function gotoLocation(object) {
+		
+	}
 }
