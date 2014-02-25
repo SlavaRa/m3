@@ -1,4 +1,7 @@
 package match3.ccs.display.screens.world;
+import flash.events.MouseEvent;
+import haxe.Log;
+import match3.ccs.Events.GameEvent;
 import match3.core.models.LocationData;
 import slavara.haxe.core.TypeDefs.DisplayObjectContainer;
 import slavara.haxe.core.TypeDefs.ResourceSprite;
@@ -24,8 +27,13 @@ class WorldLocation extends ResourceSprite {
 	}
 	
 	public override function destroy() {
-		super.destroy();
+		if(asset.isNotNull()) {
+			asset.removeEventListener(MouseEvent.CLICK, onAssetClick);
+			asset.removeEventListener(MouseEvent.MOUSE_OVER, onAssetMouseOver);
+			asset.removeEventListener(MouseEvent.MOUSE_OUT, onAssetMouseOut);
+		}
 		data = null;
+		super.destroy();
 	}
 	
 	override function render():Bool {
@@ -43,5 +51,22 @@ class WorldLocation extends ResourceSprite {
 		asset.mouseEnabled = isAvailable;
 		if(asset.is(Sprite)) cast(asset, Sprite).buttonMode = isAvailable;
 		asset.alpha = isAvailable ? 1.0 : 0.5;
+		asset.addEventListener(MouseEvent.CLICK, onAssetClick);
+		asset.addEventListener(MouseEvent.MOUSE_OVER, onAssetMouseOver);
+		asset.addEventListener(MouseEvent.MOUSE_OUT, onAssetMouseOut);
+	}
+	
+	function onAssetClick(?_) {
+		if(willTrigger(GameEvent.GOTO_LOCATION_SCREEN)) {
+			dispatchEvent(new GameEvent(GameEvent.GOTO_LOCATION_SCREEN, true, data));
+		}
+	}
+	
+	function onAssetMouseOver(?_) {
+		Log.trace("onAssetMouseOver");
+	}
+	
+	function onAssetMouseOut(?_) {
+		Log.trace("onAssetMouseOut");
 	}
 }
