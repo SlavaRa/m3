@@ -1,6 +1,9 @@
 package match3.ccs.models;
 import match3.ccs.Enums.GameState;
 import match3.core.DataBase;
+import match3.core.models.LocationData;
+import slavara.haxe.core.Errors.ArgumentNullError;
+using slavara.haxe.core.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa
@@ -15,7 +18,11 @@ class CCSUniverse extends DataBase {
 		stateMachine.setState(GameState.Empty);
 	}
 	
-	public function gotoLocation(object) {
-		
+	public function gotoLocation(data:LocationData) {
+		#if debug
+		if(data.isNull()) throw new ArgumentNullError("data");
+		#end
+		world.currentLocation = data;
+		stateMachine.setState(GameState.Location);
 	}
 }
