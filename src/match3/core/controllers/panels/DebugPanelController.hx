@@ -15,7 +15,6 @@ class DebugPanelController extends AbstractController {
 	
 	public override function initialize() {
 		super.initialize();
-		
 		cast(baseController, IBaseController).container.addChild(_view = new DebugPanelView());
 	}
 }
