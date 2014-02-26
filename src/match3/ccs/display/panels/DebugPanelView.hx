@@ -40,7 +40,6 @@ class DebugPanelView extends ResourceSprite {
 		
 		var label2handler:Map<String, MouseEvent->Void> = new Map();
 		label2handler.set("reset", onResetClick);
-		label2handler.set("empty screen", onEmptyScreenClick);
 		label2handler.set("world screen", onWorldScreenClick);
 		
 		for(it in label2handler.keys()) {
@@ -81,12 +80,6 @@ class DebugPanelView extends ResourceSprite {
 	function onResetClick(event:MouseEvent) {
 		if(willTrigger(GameEvent.RESET)) {
 			super.dispatchEvent(new GameEvent(GameEvent.RESET, true));
-		}
-	}
-	
-	function onEmptyScreenClick(event:MouseEvent) {
-		if(willTrigger(GameEvent.GOTO_EMPTY_SCREEN)) {
-			super.dispatchEvent(new GameEvent(GameEvent.GOTO_EMPTY_SCREEN, true));
 		}
 	}
 	
