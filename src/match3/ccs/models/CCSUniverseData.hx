@@ -14,8 +14,8 @@ class CCSUniverseData extends UniverseData {
 	
 	override function initialize() {
 		super.initialize();
-		stateMachine.addAllToAll([GameState.Empty, GameState.World, GameState.Location]);
-		stateMachine.setState(GameState.Empty);
+		stateMachine.addAllToAll([GameState.Loading, GameState.Intro, GameState.World, GameState.Location]);
+		stateMachine.setState(GameState.Loading);
 	}
 	
 	public function gotoLocation(data:LocationData) {
