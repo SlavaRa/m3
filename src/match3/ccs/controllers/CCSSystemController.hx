@@ -20,6 +20,7 @@ class CCSSystemController extends SystemController {
 		super.initializeListeners();
 		
 		container.addEventListener(GameEvent.RESET, onReset);
+		container.addEventListener(GameEvent.GOTO_LOADING_SCREEN, onGotoLoadingScreen);
 		container.addEventListener(GameEvent.GOTO_INTRO_SCREEN, onGotoIntroScreen);
 		container.addEventListener(GameEvent.GOTO_WORLD_SCREEN, onGotoWorldScreen);
 		container.addEventListener(GameEvent.GOTO_LOCATION_SCREEN, onGotoLocationScreen);
@@ -35,6 +36,8 @@ class CCSSystemController extends SystemController {
 	}
 	
 	function onReset(?_) server.send(ServerCommand.Reset);
+	
+	function onGotoLoadingScreen(?_) cast(data, CCSUniverseData).stateMachine.setState(GameState.Loading);
 	
 	function onGotoIntroScreen(?_) cast(data, CCSUniverseData).stateMachine.setState(GameState.Intro);
 	
