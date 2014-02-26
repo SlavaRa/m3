@@ -7,6 +7,7 @@ import flash.events.Event;
 class GameEvent extends Event {
 	
 	public static inline var RESET = "reset";
+	public static inline var GOTO_LOADING_SCREEN = "gotoLoadingScreen";
 	public static inline var GOTO_INTRO_SCREEN = "gotoIntroScreen";
 	public static inline var GOTO_WORLD_SCREEN = "gotoWorldScreen";
 	public static inline var GOTO_LOCATION_SCREEN = "gotoLocationScreen";
