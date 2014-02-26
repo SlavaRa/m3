@@ -4,7 +4,8 @@ package match3.ccs;
  * @author SlavaRa
  */
 enum GameState {
-	Empty;
+	Loading;
+	Intro;
 	World;
 	Location;
 }
