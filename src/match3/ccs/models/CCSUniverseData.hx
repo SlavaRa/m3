@@ -8,7 +8,7 @@ using slavara.haxe.core.Utils.ValidateUtil;
 /**
  * @author SlavaRa
  */
-class CCSUniverse extends UniverseData {
+class CCSUniverseData extends UniverseData {
 
 	public function new() super();
 	
