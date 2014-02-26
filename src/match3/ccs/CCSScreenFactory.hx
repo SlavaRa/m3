@@ -1,4 +1,4 @@
-package match3.ccs.factories;
+package match3.ccs;
 import match3.ccs.display.screens.EmptyScreen;
 import match3.ccs.display.screens.LocationScreen;
 import match3.ccs.display.screens.world.WorldScreen;
