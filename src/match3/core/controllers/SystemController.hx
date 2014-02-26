@@ -1,4 +1,4 @@
-package match3.core;
+package match3.core.controllers;
 import match3.core.controllers.PanelsController;
 import match3.core.controllers.ScreenController;
 import match3.core.controllers.ServerController;

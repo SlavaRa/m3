@@ -1,6 +1,6 @@
 package match3.core.controllers;
 import match3.core.display.ScreenView;
-import match3.core.SystemController;
+import match3.core.controllers.SystemController;
 import slavara.haxe.core.controllers.BaseController.AbstractController;
 import slavara.haxe.core.controllers.BaseController.IController;
 import slavara.haxe.core.Interfaces.IStateMachineHolder;

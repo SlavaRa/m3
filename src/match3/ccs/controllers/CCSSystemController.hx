@@ -3,10 +3,10 @@ import match3.ccs.Enums.GameState;
 import match3.ccs.Events.GameEvent;
 import match3.ccs.factories.CCSScreenFactory;
 import match3.ccs.models.CCSUniverse;
+import match3.core.controllers.SystemController;
 import match3.core.Enums.ServerCommand;
 import match3.core.factories.ViewFactory.ScreenFactory;
 import match3.core.models.LocationData;
-import match3.core.SystemController;
 import slavara.haxe.core.TypeDefs.DisplayObjectContainer;
 
 /**
