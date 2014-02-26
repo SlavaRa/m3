@@ -1,6 +1,6 @@
 package match3.ccs.models;
 import match3.ccs.Enums.GameState;
-import match3.core.DataBase;
+import match3.core.models.DataBase;
 import match3.core.models.LocationData;
 import slavara.haxe.core.Errors.ArgumentNullError;
 using slavara.haxe.core.Utils.ValidateUtil;

@@ -1,4 +1,4 @@
-package match3.core;
+package match3.core.models;
 import match3.core.models.prototypes.RewardProto;
 import match3.core.models.prototypes.UserProto;
 import match3.core.models.prototypes.WorldProto;

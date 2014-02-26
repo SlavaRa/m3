@@ -5,7 +5,7 @@ import match3.core.controllers.ServerController;
 import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
-import match3.core.DataBase;
+import match3.core.models.DataBase;
 import match3.core.Enums.ServerCommand;
 import match3.core.Events.ServerControllerEvent;
 import match3.core.factories.ViewFactory.ScreenFactory;
