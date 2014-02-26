@@ -7,7 +7,7 @@ import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
 import match3.core.Enums.ServerCommand;
 import match3.core.Events.ServerControllerEvent;
-import match3.core.ViewFactory.ScreenFactory;
+import match3.core.Factories.ScreenFactory;
 import match3.core.models.UniverseData;
 import slavara.haxe.core.controllers.BaseController;
 import slavara.haxe.core.TypeDefs.DisplayObjectContainer;

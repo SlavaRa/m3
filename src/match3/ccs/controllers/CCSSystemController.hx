@@ -5,7 +5,7 @@ import match3.ccs.factories.CCSScreenFactory;
 import match3.ccs.models.CCSUniverseData;
 import match3.core.controllers.SystemController;
 import match3.core.Enums.ServerCommand;
-import match3.core.ViewFactory.ScreenFactory;
+import match3.core.Factories.ScreenFactory;
 import match3.core.models.LocationData;
 import slavara.haxe.core.TypeDefs.DisplayObjectContainer;
 
