@@ -4,9 +4,8 @@ import slavara.haxe.game.Models.UnknownData;
 
 /**
  * @author SlavaRa
- * TODO: rename to BaseScreen
  */
-class EmptyScreen extends ResourceSprite {
+class BaseScreen extends ResourceSprite {
 
 	public function new() super();
 	

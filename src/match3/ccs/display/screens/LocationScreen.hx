@@ -7,7 +7,7 @@ using slavara.haxe.core.Utils.ValidateUtil;
 /**
  * @author SlavaRa
  */
-class LocationScreen extends EmptyScreen {
+class LocationScreen extends BaseScreen {
 	
 	public function new(data:LocationData) {
 		super();

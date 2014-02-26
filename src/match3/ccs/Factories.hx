@@ -1,5 +1,5 @@
 package match3.ccs;
-import match3.ccs.display.screens.EmptyScreen;
+import match3.ccs.display.screens.BaseScreen;
 import match3.ccs.display.screens.LocationScreen;
 import match3.ccs.display.screens.world.WorldScreen;
 import match3.ccs.Enums.GameState;
@@ -20,7 +20,7 @@ class CCSScreenFactory extends ScreenFactory {
 	
 	public override function getScreens():Map<EnumValue, DisplayObject> {
 		return [
-			GameState.Empty => new EmptyScreen(),
+			GameState.Empty => new BaseScreen(),
 			GameState.World => new WorldScreen(_data.world),
 			GameState.Location => new LocationScreen(_data.world),
 		];
