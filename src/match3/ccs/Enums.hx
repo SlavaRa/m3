@@ -9,3 +9,10 @@ enum GameState {
 	World;
 	Location;
 }
+
+enum PanelState {
+	Closing;
+	Closed;
+	Opening;
+	Open;
+}
