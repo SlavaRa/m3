@@ -20,7 +20,6 @@ class CCSScreenFactory extends ScreenFactory {
 	
 	public override function getScreens():Map<EnumValue, DisplayObject> {
 		return [
-			GameState.Empty => new BaseScreen(),
 			GameState.World => new WorldScreen(_data.world),
 			GameState.Location => new LocationScreen(_data.world),
 		];
