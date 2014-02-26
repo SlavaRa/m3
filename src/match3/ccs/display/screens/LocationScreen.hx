@@ -1,4 +1,5 @@
 package match3.ccs.display.screens;
+import match3.core.display.BaseScreen;
 import match3.core.models.LocationData;
 import match3.core.models.prototypes.LocationProto;
 import slavara.haxe.core.Errors.NotImplementedError;

@@ -1,4 +1,4 @@
-package match3.ccs.display.screens;
+package match3.core.display;
 import slavara.haxe.core.TypeDefs.ResourceSprite;
 import slavara.haxe.game.Models.UnknownData;
 

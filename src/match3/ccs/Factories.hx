@@ -1,5 +1,5 @@
 package match3.ccs;
-import match3.ccs.display.screens.BaseScreen;
+import match3.core.display.BaseScreen;
 import match3.ccs.display.screens.LocationScreen;
 import match3.ccs.display.screens.world.WorldScreen;
 import match3.ccs.Enums.GameState;
