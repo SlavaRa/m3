@@ -7,7 +7,7 @@ import slavara.haxe.game.Models.UnknownData;
  */
 class BaseScreen extends ResourceSprite {
 
-	public function new() super();
+	function new() super();
 	
 	public var data(null, set):UnknownData;
 	
