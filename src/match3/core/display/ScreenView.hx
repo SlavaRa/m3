@@ -1,5 +1,5 @@
 package match3.core.display;
-import match3.core.factories.ViewFactory.ScreenFactory;
+import match3.core.ViewFactory.ScreenFactory;
 import slavara.haxe.core.Interfaces.IStateMachineHolder;
 import slavara.haxe.core.TypeDefs.DisplayObject;
 import slavara.haxe.core.TypeDefs.ResourceSprite;

@@ -4,7 +4,7 @@ import match3.ccs.display.screens.LocationScreen;
 import match3.ccs.display.screens.world.WorldScreen;
 import match3.ccs.Enums.GameState;
 import match3.ccs.models.CCSUniverseData;
-import match3.core.factories.ViewFactory.ScreenFactory;
+import match3.core.ViewFactory.ScreenFactory;
 import slavara.haxe.core.TypeDefs.DisplayObject;
 
 /**

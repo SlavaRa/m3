@@ -1,4 +1,4 @@
-package match3.core.factories;
+package match3.core;
 import slavara.haxe.core.Errors.NotImplementedError;
 import slavara.haxe.core.TypeDefs.DisplayObject;
 
