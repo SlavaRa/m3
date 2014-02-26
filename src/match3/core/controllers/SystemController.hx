@@ -11,7 +11,6 @@ import match3.core.factories.ViewFactory.ScreenFactory;
 import match3.core.models.UniverseData;
 import slavara.haxe.core.controllers.BaseController;
 import slavara.haxe.core.TypeDefs.DisplayObjectContainer;
-using Reflect;
 
 /**
  * @author SlavaRa
