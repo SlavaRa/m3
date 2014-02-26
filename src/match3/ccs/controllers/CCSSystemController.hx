@@ -1,7 +1,7 @@
 package match3.ccs.controllers;
-import match3.ccs.CCSScreenFactory;
 import match3.ccs.Enums.GameState;
 import match3.ccs.Events.GameEvent;
+import match3.ccs.Factories.CCSScreenFactory;
 import match3.ccs.models.CCSUniverseData;
 import match3.core.controllers.SystemController;
 import match3.core.Enums.ServerCommand;
