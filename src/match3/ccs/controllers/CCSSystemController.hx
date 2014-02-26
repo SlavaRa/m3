@@ -32,7 +32,7 @@ class CCSSystemController extends SystemController {
 	
 	public override function start() {
 		super.start();
-		cast(data, CCSUniverseData).stateMachine.setState(GameState.World);
+		cast(data, CCSUniverseData).stateMachine.setState(GameState.Intro);
 	}
 	
 	function onReset(?_) server.send(ServerCommand.Reset);
