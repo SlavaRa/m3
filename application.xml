@@ -11,8 +11,8 @@
 	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
 	
 	<source path="src" />
-	<!--<source path="D:/haxe/slavara-core-hx/src/" />-->
-	<source path="W:/projects/slavara-core-haxe/src/" />
+	<source path="D:/haxe/slavara-core-hx/src/" />
+	<!--<source path="W:/projects/slavara-core-haxe/src/" />-->
 	
 	<haxelib name="swf" />
 	<haxelib name="msignal" />
@@ -23,7 +23,7 @@
 	<assets path="assets/proto/ccs" rename="proto" include="*.conf.js" />
 	<assets path="assets/swf/ccs" rename="swf" include="*.swf" />
 	
-	<!--<haxeflag name="-swf-lib" value="D:/haxe/slavara-core-hx/libs/datahelpers.swf" if="flash" />-->
-	<haxeflag name="-swf-lib" value="W:/projects/slavara-core-haxe/libs/datahelpers.swf" if="flash" />
+	<haxeflag name="-swf-lib" value="D:/haxe/slavara-core-hx/libs/datahelpers.swf" if="flash" />
+	<!--<haxeflag name="-swf-lib" value="W:/projects/slavara-core-haxe/libs/datahelpers.swf" if="flash" />-->
 	<haxeflag name="-dce std" if="haxe3" />
 </project>
