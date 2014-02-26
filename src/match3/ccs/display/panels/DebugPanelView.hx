@@ -20,15 +20,12 @@ class DebugPanelView extends ResourceSprite {
 	
 	public override function initialize() {
 		super.initialize();
-		
 		var boxSkin = new Paint();
 		boxSkin.color = 0x000000;
-		
 		var btnSkin = new Paint();
 		btnSkin.color = 0x000000;
 		btnSkin.borderColor = 0x00AE00;
 		btnSkin.border = 1;
-		
 		_box = UIBuilder.create(HBox);
 		_box.x = 0;
 		_box.h = 30;
@@ -37,11 +34,9 @@ class DebugPanelView extends ResourceSprite {
 		_box.paddingRight = 10;
 		_box.paddingLeft = 10;
 		_box.childPadding = 5;
-		
 		var label2handler:Map<String, MouseEvent->Void> = new Map();
 		label2handler.set("reset", onResetClick);
 		label2handler.set("world screen", onWorldScreenClick);
-		
 		for(it in label2handler.keys()) {
 			var btn:Button = UIBuilder.create(Button);
 			btn.autoSize = true;
@@ -50,24 +45,20 @@ class DebugPanelView extends ResourceSprite {
 			btn.skin = btnSkin;
 			btn.applySkin();
 			btn.addEventListener(MouseEvent.CLICK, label2handler.get(it));
-			
 			_box.addChild(btn);
 		}
-		
 		addChild(_box);
 	}
 	
 	public override function destroy() {
-		super.destroy();
-		
 		_box = DestroyUtil.destroy(_box);
+		super.destroy();
 	}
 	
 	override function render():Bool {
 		if(!super.render()) {
 			return false;
 		}
-		
 		updateHBox();
 		return true;
 	}
