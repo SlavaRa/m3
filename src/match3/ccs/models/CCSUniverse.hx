@@ -1,14 +1,14 @@
 package match3.ccs.models;
 import match3.ccs.Enums.GameState;
-import match3.core.models.DataBase;
 import match3.core.models.LocationData;
+import match3.core.models.UniverseData;
 import slavara.haxe.core.Errors.ArgumentNullError;
 using slavara.haxe.core.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa
  */
-class CCSUniverse extends DataBase {
+class CCSUniverse extends UniverseData {
 
 	public function new() super();
 	

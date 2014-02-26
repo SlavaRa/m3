@@ -5,10 +5,10 @@ import match3.core.controllers.ServerController;
 import match3.core.controllers.SoundController;
 import match3.core.controllers.StatController;
 import match3.core.controllers.UserController;
-import match3.core.models.DataBase;
 import match3.core.Enums.ServerCommand;
 import match3.core.Events.ServerControllerEvent;
 import match3.core.factories.ViewFactory.ScreenFactory;
+import match3.core.models.UniverseData;
 import slavara.haxe.core.controllers.BaseController;
 import slavara.haxe.core.TypeDefs.DisplayObjectContainer;
 using Reflect;
@@ -18,7 +18,7 @@ using Reflect;
  */
 class SystemController extends BaseController {
 	
-	public function new(container:DisplayObjectContainer, data:DataBase) super(container, data);
+	public function new(container:DisplayObjectContainer, data:UniverseData) super(container, data);
 	
 	public var server(default, null):ServerController;
 	public var sound(default, null):SoundController;
@@ -50,5 +50,5 @@ class SystemController extends BaseController {
 	
 	function initializeListeners() server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, onServerMessageReceived);
 	
-	function onServerMessageReceived(event:ServerControllerEvent) cast(data, DataBase).readExternal(event.message);
+	function onServerMessageReceived(event:ServerControllerEvent) cast(data, UniverseData).readExternal(event.message);
 }

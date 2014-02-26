@@ -12,7 +12,7 @@ using Reflect;
 /**
  * @author SlavaRa
  */
-class DataBase extends UnknownData {
+class UniverseData extends UnknownData {
 	
 	public function new() super(new PrototypesCollectionData());
 	
