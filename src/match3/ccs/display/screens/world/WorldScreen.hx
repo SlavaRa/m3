@@ -21,8 +21,8 @@ class WorldScreen extends BaseScreen {
 	}
 	
 	public override function destroy() {
-		super.destroy();
 		_locations = DestroyUtil.destroy(_locations);
+		super.destroy();
 	}
 	
 	var _locations:Array<WorldLocation>;
@@ -33,13 +33,12 @@ class WorldScreen extends BaseScreen {
 		
 		var count = 0;
 		for(i in 0...asset.numChildren) {
-			var container = getContainer("location_" + count);
+			var container = getContainer("location_" + count++);
 			if(container.isNull()) break;
 			
 			var location = new WorldLocation(container);
 			addChildWithContainer(location, container);
 			_locations.push(location);
-			count++;
 		}
 		
 		update();

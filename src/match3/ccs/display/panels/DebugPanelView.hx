@@ -56,9 +56,7 @@ class DebugPanelView extends ResourceSprite {
 	}
 	
 	override function render():Bool {
-		if(!super.render()) {
-			return false;
-		}
+		if(!super.render()) return false;
 		updateHBox();
 		return true;
 	}

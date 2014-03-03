@@ -1,6 +1,6 @@
 package match3.core.controllers;
-import match3.core.display.ScreenView;
 import match3.core.controllers.SystemController;
+import match3.core.display.ScreenView;
 import slavara.haxe.core.controllers.BaseController.AbstractController;
 import slavara.haxe.core.controllers.BaseController.IController;
 import slavara.haxe.core.Interfaces.IStateMachineHolder;
@@ -18,7 +18,6 @@ class ScreenController extends AbstractController {
 		super.initialize();
 		
 		var system:SystemController = cast(baseController, SystemController);
-		
 		system.container.addChild(_view = new ScreenView(system.createScreenFactory()));
 		_view.data = cast(data, IStateMachineHolder);
 	}

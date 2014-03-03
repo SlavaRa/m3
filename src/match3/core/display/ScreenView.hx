@@ -39,10 +39,10 @@ class ScreenView extends ResourceSprite {
 	var _states:Map<EnumValue, DisplayObject>;
 	
 	public override function destroy() {
-		super.destroy();
 		data = null;
 		_factory = null;
 		_states = DestroyUtil.destroy(_states);
+		super.destroy();
 	}
 	
 	inline function updateState() {

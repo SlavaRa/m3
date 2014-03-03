@@ -35,5 +35,5 @@ class Main extends BaseSprite {
 		return true;
 	}
 	
-	function initializeController(?_) _controller.start();
+	inline function initializeController(?_) _controller.start();
 }
