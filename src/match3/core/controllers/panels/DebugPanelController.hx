@@ -1,8 +1,9 @@
 package match3.core.controllers.panels;
-import match3.ccs.display.panels.DebugPanelView;
 import slavara.haxe.core.controllers.BaseController.AbstractController;
 import slavara.haxe.core.controllers.BaseController.IBaseController;
 import slavara.haxe.core.controllers.BaseController.IController;
+import slavara.haxe.core.Errors.NotImplementedError;
+import slavara.haxe.core.TypeDefs.DisplayObject;
 
 /**
  * @author SlavaRa
@@ -11,10 +12,16 @@ class DebugPanelController extends AbstractController {
 
 	public function new(controller:IController) super(controller);
 	
-	var _view:DebugPanelView;
+	var _view:DisplayObject;
+	
+	public function getViewRenderer():Class<Dynamic> {
+		throw new NotImplementedError();
+		return null;
+	}
 	
 	public override function initialize() {
 		super.initialize();
-		cast(baseController, IBaseController).container.addChild(_view = new DebugPanelView());
+		_view = Type.createInstance(getViewRenderer(), []);
+		cast(baseController, IBaseController).container.addChild(_view);
 	}
 }
