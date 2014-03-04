@@ -1,4 +1,4 @@
-package match3.ccs.display.panels;
+package match3.ccs.controllers.panels;
 import slavara.haxe.core.controllers.BaseController.AbstractController;
 import slavara.haxe.core.controllers.BaseController.IController;
 
