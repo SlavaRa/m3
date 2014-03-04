@@ -35,7 +35,8 @@ class CCSServerController extends ServerController {
 			}
 			d.deleteField("locations");
 			d.setProperty("+locations", locations);
-			dispatchEvent(new ServerControllerEvent(ServerControllerEvent.MESSAGE_RECEIVED, { "prototypes": { "world":d } } ));
+			d = { "prototypes": { "world":d }};
+			dispatchEvent(new ServerControllerEvent(ServerControllerEvent.MESSAGE_RECEIVED, d));
 		});
 		
 		var s = "{";
