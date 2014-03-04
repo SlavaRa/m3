@@ -1,5 +1,5 @@
 package match3.ccs.display.screens.world;
-import match3.core.display.BaseScreen;
+import match3.core.display.ScreenView;
 import match3.core.models.prototypes.WorldProto;
 import match3.core.models.WorldData;
 import slavara.haxe.core.Utils.DestroyUtil;
@@ -8,7 +8,7 @@ using slavara.haxe.core.Utils.ValidateUtil;
 /**
  * @author SlavaRa
  */
-class WorldScreen extends BaseScreen {
+class WorldScreen extends ScreenView {
 
 	public function new(data:WorldData) {
 		super();

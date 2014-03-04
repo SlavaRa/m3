@@ -1,7 +1,7 @@
 package match3.ccs.display.screens;
 import flash.events.MouseEvent;
 import match3.ccs.Events.GameEvent;
-import match3.core.display.BaseScreen;
+import match3.core.display.ScreenView;
 import match3.core.Utils.TextFieldUtils;
 import ru.stablex.ui.UIBuilder;
 import ru.stablex.ui.widgets.Button;
@@ -11,7 +11,7 @@ using slavara.haxe.core.Utils.ValidateUtil;
 /**
  * @author SlavaRa
  */
-class IntroScreen extends BaseScreen {
+class IntroScreen extends ScreenView {
 	
 	public function new() super();
 	

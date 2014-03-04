@@ -1,5 +1,5 @@
 package match3.ccs.display.screens;
-import match3.core.display.BaseScreen;
+import match3.core.display.ScreenView;
 import match3.core.models.LocationData;
 import match3.core.models.prototypes.LocationProto;
 import slavara.haxe.core.Errors.NotImplementedError;
@@ -8,7 +8,7 @@ using slavara.haxe.core.Utils.ValidateUtil;
 /**
  * @author SlavaRa
  */
-class LocationScreen extends BaseScreen {
+class LocationScreen extends ScreenView {
 	
 	public function new(data:LocationData) {
 		super();

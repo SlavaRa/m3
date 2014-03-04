@@ -5,7 +5,7 @@ import slavara.haxe.game.Models.UnknownData;
 /**
  * @author SlavaRa
  */
-class BaseScreen extends ResourceSprite {
+class ScreenView extends ResourceSprite {
 
 	function new() super();
 	
