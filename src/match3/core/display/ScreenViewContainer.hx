@@ -9,7 +9,7 @@ using slavara.haxe.core.Utils.ValidateUtil;
 /**
  * @author SlavaRa
  */
-class ScreenView extends ResourceSprite {
+class ScreenViewContainer extends ResourceSprite {
 
 	public function new(factory:ScreenFactory) {
 		super();
