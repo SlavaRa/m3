@@ -11,8 +11,8 @@ class PanelsController extends AbstractController {
 
 	public function new(controller:IController) super(controller);
 	
-	public var debug(default, null):AbstractPanelController;
-	public var settings(default, null):AbstractPanelController;
+	public var debug(default, null):PanelController;
+	public var settings(default, null):PanelController;
 	
 	public override function initialize() {
 		super.initialize();
@@ -25,12 +25,12 @@ class PanelsController extends AbstractController {
 		if(aClass.isNotNull()) settings = Type.createInstance(aClass, [baseController]);
 	}
 	
-	function getDebugType():Class<AbstractPanelController> {
+	function getDebugType():Class<PanelController> {
 		throw new NotImplementedError();
 		return null;
 	}
 	
-	function getSettingsType():Class<AbstractPanelController> {
+	function getSettingsType():Class<PanelController> {
 		throw new NotImplementedError();
 		return null;
 	}

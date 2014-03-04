@@ -8,7 +8,7 @@ import slavara.haxe.core.TypeDefs.DisplayObject;
 /**
  * @author SlavaRa
  */
-class AbstractPanelController extends AbstractController {
+class PanelController extends AbstractController {
 
 	public function new(controller:IController) super(controller);
 	
