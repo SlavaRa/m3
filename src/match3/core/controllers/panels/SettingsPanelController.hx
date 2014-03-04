@@ -8,4 +8,5 @@ import slavara.haxe.core.controllers.BaseController.IController;
 class SettingsPanelController extends AbstractController {
 
 	public function new(controller:IController) super(controller);
+	
 }
