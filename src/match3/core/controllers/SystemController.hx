@@ -38,6 +38,8 @@ class SystemController extends BaseController {
 	
 	public function createScreenFactory():ScreenFactory return new ScreenFactory();
 	
+	public function reset() server.send(ServerCommand.Reset);
+	
 	public function start() server.send(ServerCommand.Start);
 	
 	function initializeControllers() {

@@ -32,7 +32,7 @@ class CCSSystemController extends SystemController {
 	public override function createScreenFactory():ScreenFactory return new CCSScreenFactory(cast(data, CCSUniverseData));
 	
 	public override function start() {
-		//TODO: super.reset();
+		reset();
 		super.start();
 		cast(data, CCSUniverseData).stateMachine.setState(GameState.Intro);
 	}
@@ -46,7 +46,7 @@ class CCSSystemController extends SystemController {
 		container.addEventListener(GameEvent.GOTO_LOCATION_SCREEN, onGotoLocationScreen);
 	}
 	
-	function onReset(?_) server.send(ServerCommand.Reset);
+	function onReset(?_) reset();
 	
 	function onGotoLoadingScreen(?_) cast(data, CCSUniverseData).stateMachine.setState(GameState.Loading);
 	
