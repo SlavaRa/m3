@@ -1,15 +1,15 @@
 package match3.ccs.controllers.panels;
 import match3.ccs.display.panels.DebugPanelView;
-import match3.core.controllers.panels.DebugPanelController;
+import match3.core.controllers.AbstractPanelController;
 import slavara.haxe.core.controllers.BaseController.IController;
-
+import slavara.haxe.core.TypeDefs.DisplayObject;
 
 /**
  * @author SlavaRa
  */
-class CCSDebugPanelController extends DebugPanelController {
+class CCSDebugPanelController extends AbstractPanelController {
 	
 	public function new(controller:IController) super(controller);
 	
-	public override function getViewRenderer():Class<Dynamic> return DebugPanelView;
+	override function getViewType():Class<DisplayObject> return DebugPanelView;
 }
