@@ -39,20 +39,20 @@ class CCSServerController extends ServerController {
 			dispatchEvent(new ServerControllerEvent(ServerControllerEvent.MESSAGE_RECEIVED, d));
 		});
 		
-		var s = "{";
-		s += "\"global\":{";
-		s += "\"world\":{";
-		s += "\"proto_id\":0,";
-		s += "\"+locations\":[";
-		s += "{\"id\":0,\"proto_id\":0, \"is_available\":1},";
-		s += "{\"id\":1,\"proto_id\":0},";
-		s += "{\"id\":2,\"proto_id\":0},";
-		s += "{\"id\":3,\"proto_id\":0},";
-		s += "{\"id\":4,\"proto_id\":0}";
-		s += "]";
-		s += "}";
-		s += "}";
-		s += "}";
-		dispatchEvent(new ServerControllerEvent(ServerControllerEvent.MESSAGE_RECEIVED, Json.parse(s)));
+		var d:Dynamic = {
+			"global":{
+				"world":{
+					"proto_id":0,
+					"+locations":[
+						{"id":0,"proto_id":0, "is_available":1},
+						{"id":1,"proto_id":0, "is_available":0},
+						{"id":2,"proto_id":0, "is_available":0},
+						{"id":3,"proto_id":0, "is_available":0},
+						{"id":4,"proto_id":0, "is_available":0}
+					]
+				}
+			}
+		};
+		dispatchEvent(new ServerControllerEvent(ServerControllerEvent.MESSAGE_RECEIVED, d));
 	}
 }
