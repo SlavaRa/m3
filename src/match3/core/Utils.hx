@@ -1,5 +1,52 @@
 package match3.core;
+import flash.events.TimerEvent;
 import flash.text.TextFormat;
+import flash.utils.Timer;
+using slavara.haxe.core.Utils.ValidateUtil;
+
+/**
+ * @author SlavaRa
+ */
+class GlobalSecondTimer {
+	
+	_timer:Timer;
+	
+	public static function init() {
+		if(_timer.isNotNull()) return;
+		_timer = new Timer(60);
+		_timer.start();
+	}
+	
+	public static function addEventListener(type : String, listener : Dynamic -> Void, useCapture : Bool = false, priority : Int = 0, useWeakReference : Bool = false) {
+		_timer.addEventListener(type, listener, useCapture, priority, useWeakReference);
+	}
+	
+	public static function removeEventListener(type : String, listener : Dynamic -> Void, useCapture : Bool = false) {
+		_timer.removeEventListener(type, listener, useCapture);
+	}
+}
+
+/**
+ * @author SlavaRa
+ */
+class GlobalMinuteTimer {
+	
+	_timer:Timer;
+	
+	public static function init() {
+		if(_timer.isNotNull()) return;
+		_timer = new Timer(1000);
+		_timer.start();
+	}
+	
+	public static function addEventListener(type : String, listener : Dynamic -> Void, useCapture : Bool = false, priority : Int = 0, useWeakReference : Bool = false) {
+		_timer.addEventListener(type, listener, useCapture, priority, useWeakReference);
+	}
+	
+	public static function removeEventListener(type : String, listener : Dynamic -> Void, useCapture : Bool = false) {
+		_timer.removeEventListener(type, listener, useCapture);
+	}
+}
 
 /**
  * @author SlavaRa
