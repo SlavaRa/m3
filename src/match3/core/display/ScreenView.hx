@@ -21,7 +21,7 @@ class ScreenView extends ResourceSprite {
 	inline function set_data(value:IStateMachineHolder) {
 		if(value != data) {
 			if(data.isNotNull()) {
-				data.stateMachine.reset();
+				data.stateMachine.onChange.remove(updateState);
 			}
 			
 			data = value;
