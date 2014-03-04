@@ -19,9 +19,11 @@ class CCSServerController extends ServerController {
 	public override function send(command:ServerCommand, ?data:Dynamic, ?onResponseReceived:Dynamic -> Void, ?onResponseSavedData:Dynamic) {
 		switch (command) {
 			case ServerCommand.Start: start();
-			case ServerCommand.Reset: Log.trace("reset");
+			case ServerCommand.Reset: reset();
 		}
 	}
+	
+	function reset() Log.trace("IMPLEMENT ME");
 	
 	function start() {
 		var prototypes = "proto/";
