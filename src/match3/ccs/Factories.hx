@@ -12,6 +12,7 @@ import slavara.haxe.core.TypeDefs.DisplayObject;
  * @author SlavaRa
  */
 class CCSScreenFactory extends ScreenFactory {
+	
 	public function new(data:CCSUniverseData) {
 		super();
 		_data = data;
