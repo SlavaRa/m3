@@ -9,13 +9,15 @@ using slavara.haxe.core.Utils.ValidateUtil;
  */
 class GlobalSecondTimer {
 	
-	_timer:Timer;
+	static var _timer:Timer;
 	
-	public static function init() {
-		if(_timer.isNotNull()) return;
-		_timer = new Timer(60);
+	public static function start() {
+		if(_timer.isNull()) _timer = new Timer(60);
+		_timer.reset();
 		_timer.start();
 	}
+	
+	public static function stop() if(_timer.isNotNull()) _timer.stop();
 	
 	public static function addEventListener(type : String, listener : Dynamic -> Void, useCapture : Bool = false, priority : Int = 0, useWeakReference : Bool = false) {
 		_timer.addEventListener(type, listener, useCapture, priority, useWeakReference);
@@ -31,13 +33,15 @@ class GlobalSecondTimer {
  */
 class GlobalMinuteTimer {
 	
-	_timer:Timer;
+	static var _timer:Timer;
 	
-	public static function init() {
-		if(_timer.isNotNull()) return;
-		_timer = new Timer(1000);
+	public static function start() {
+		if(_timer.isNull()) _timer = new Timer(1000);
+		_timer.reset();
 		_timer.start();
 	}
+	
+	public static function stop() if(_timer.isNotNull()) _timer.stop();
 	
 	public static function addEventListener(type : String, listener : Dynamic -> Void, useCapture : Bool = false, priority : Int = 0, useWeakReference : Bool = false) {
 		_timer.addEventListener(type, listener, useCapture, priority, useWeakReference);
