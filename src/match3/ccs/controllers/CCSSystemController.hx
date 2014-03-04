@@ -32,6 +32,7 @@ class CCSSystemController extends SystemController {
 	public override function createScreenFactory():ScreenFactory return new CCSScreenFactory(cast(data, CCSUniverseData));
 	
 	public override function start() {
+		//TODO: super.reset();
 		super.start();
 		cast(data, CCSUniverseData).stateMachine.setState(GameState.Intro);
 	}
