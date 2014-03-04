@@ -7,6 +7,8 @@ import match3.core.controllers.SystemController;
 import match3.core.Enums.ServerCommand;
 import match3.core.Factories.ScreenFactory;
 import match3.core.models.LocationData;
+import match3.core.Utils.GlobalMinuteTimer;
+import match3.core.Utils.GlobalSecondTimer;
 import slavara.haxe.core.TypeDefs.DisplayObjectContainer;
 
 /**
@@ -18,6 +20,8 @@ class CCSSystemController extends SystemController {
 	
 	public override function initialize() {
 		super.initialize();
+		GlobalSecondTimer.start();
+		GlobalMinuteTimer.start();
 		ru.stablex.ui.UIBuilder.init();
 	}
 	
