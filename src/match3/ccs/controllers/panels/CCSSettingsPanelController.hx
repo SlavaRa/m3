@@ -5,7 +5,7 @@ import slavara.haxe.core.controllers.BaseController.IController;
 /**
  * @author SlavaRa
  */
-class SettingsPanelController extends AbstractController {
+class CCSSettingsPanelController extends AbstractController {
 
 	public function new(controller:IController) super(controller);
 	
