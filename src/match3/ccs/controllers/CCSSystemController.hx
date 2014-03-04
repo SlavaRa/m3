@@ -27,6 +27,8 @@ class CCSSystemController extends SystemController {
 	
 	public override function getServerType():Class<Dynamic> return CCSServerController;
 	
+	public override function getPanelsType():Class<Dynamic> return CCSPanelsController;
+	
 	public override function createScreenFactory():ScreenFactory return new CCSScreenFactory(cast(data, CCSUniverseData));
 	
 	public override function start() {

@@ -34,6 +34,8 @@ class SystemController extends BaseController {
 	
 	public function getServerType():Class<Dynamic> return ServerController;
 	
+	public function getPanelsType():Class<Dynamic> return PanelsController;
+	
 	public function createScreenFactory():ScreenFactory return new ScreenFactory();
 	
 	public function start() server.send(ServerCommand.Start);
@@ -44,7 +46,7 @@ class SystemController extends BaseController {
 		stat = new StatController(this);
 		user = new UserController(this);
 		screen = new ScreenController(this);
-		panels = new PanelsController(this);
+		panels = Type.createInstance(getPanelsType(), [this]);
 	}
 	
 	function initializeListeners() server.addEventListener(ServerControllerEvent.MESSAGE_RECEIVED, onServerMessageReceived);
