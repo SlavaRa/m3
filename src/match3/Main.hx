@@ -20,7 +20,6 @@ class Main extends BaseSprite {
 	
 	public override function initialize() {
 		super.initialize();
-		ru.stablex.ui.UIBuilder.init();
 		_controller = new CCSSystemController(this);
 	}
 	

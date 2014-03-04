@@ -16,14 +16,9 @@ class CCSSystemController extends SystemController {
 
 	public function new(container:DisplayObjectContainer) super(container, new CCSUniverseData());
 	
-	override function initializeListeners() {
-		super.initializeListeners();
-		
-		container.addEventListener(GameEvent.RESET, onReset);
-		container.addEventListener(GameEvent.GOTO_LOADING_SCREEN, onGotoLoadingScreen);
-		container.addEventListener(GameEvent.GOTO_INTRO_SCREEN, onGotoIntroScreen);
-		container.addEventListener(GameEvent.GOTO_WORLD_SCREEN, onGotoWorldScreen);
-		container.addEventListener(GameEvent.GOTO_LOCATION_SCREEN, onGotoLocationScreen);
+	public override function initialize() {
+		super.initialize();
+		ru.stablex.ui.UIBuilder.init();
 	}
 	
 	public override function getServerType():Class<Dynamic> return CCSServerController;
@@ -33,6 +28,15 @@ class CCSSystemController extends SystemController {
 	public override function start() {
 		super.start();
 		cast(data, CCSUniverseData).stateMachine.setState(GameState.Intro);
+	}
+	
+	override function initializeListeners() {
+		super.initializeListeners();
+		container.addEventListener(GameEvent.RESET, onReset);
+		container.addEventListener(GameEvent.GOTO_LOADING_SCREEN, onGotoLoadingScreen);
+		container.addEventListener(GameEvent.GOTO_INTRO_SCREEN, onGotoIntroScreen);
+		container.addEventListener(GameEvent.GOTO_WORLD_SCREEN, onGotoWorldScreen);
+		container.addEventListener(GameEvent.GOTO_LOCATION_SCREEN, onGotoLocationScreen);
 	}
 	
 	function onReset(?_) server.send(ServerCommand.Reset);
