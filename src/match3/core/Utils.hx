@@ -1,5 +1,4 @@
 package match3.core;
-import flash.events.TimerEvent;
 import flash.text.TextFormat;
 import flash.utils.Timer;
 using slavara.haxe.core.Utils.ValidateUtil;
