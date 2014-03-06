@@ -15,6 +15,8 @@ class WorldScreen extends ScreenView {
 		this.data = data;
 	}
 	
+	var _locations:Array<WorldLocation>;
+	
 	public override function initialize() {
 		super.initialize();
 		_locations = [];
@@ -25,22 +27,17 @@ class WorldScreen extends ScreenView {
 		super.destroy();
 	}
 	
-	var _locations:Array<WorldLocation>;
-	
 	override function render():Bool {
 		if(!super.render()) return false;
 		if(asset.isNull()) setAsset(cast(data.proto, WorldProto).asset);
-		
 		var count = 0;
 		for(i in 0...asset.numChildren) {
 			var container = getContainer("location_" + count++);
 			if(container.isNull()) break;
-			
 			var location = new WorldLocation(container);
 			addChildWithContainer(location, container);
 			_locations.push(location);
 		}
-		
 		update();
 		return true;
 	}
@@ -48,7 +45,6 @@ class WorldScreen extends ScreenView {
 	override function update() {
 		super.update();
 		if(stage.isNull() || data.isNull()) return;
-		
 		var data:WorldData = cast(this.data, WorldData);
 		var iterator:Iterator<WorldLocation> = _locations.iterator();
 		for(it in data.locations.getItems()) {
