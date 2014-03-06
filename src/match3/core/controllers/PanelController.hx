@@ -20,6 +20,14 @@ class PanelController extends AbstractController {
 		cast(baseController, IBaseController).container.addChild(_view);
 	}
 	
+	public function show() {
+		//TODO: IMPLEMENT ME
+	}
+	
+	public function hide() {
+		//TODO: IMPLEMENT ME
+	}
+	
 	function getViewType():Class<DisplayObject> {
 		throw new NotImplementedError();
 		return null;
