@@ -9,13 +9,14 @@ using slavara.haxe.core.Utils.ValidateUtil;
  * @author SlavaRa
  */
 class CCSUniverseData extends UniverseData {
-
+	
+	static var _states:Array<EnumValue> = [GameState.Loading, GameState.Intro, GameState.World, GameState.Location];
+	
 	public function new() super();
 	
 	override function initialize() {
 		super.initialize();
-		stateMachine.addAllToAll([GameState.Loading, GameState.Intro, GameState.World, GameState.Location]);
-		stateMachine.setState(GameState.Loading);
+		stateMachine.addAllToAll(_states).setState(GameState.Loading);
 	}
 	
 	public function gotoLocation(data:LocationData) {
