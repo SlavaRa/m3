@@ -10,13 +10,11 @@ using slavara.haxe.core.Utils.ValidateUtil;
  */
 class CCSUniverseData extends UniverseData {
 	
-	static var _states:Array<EnumValue> = [GameState.Loading, GameState.Intro, GameState.World, GameState.Location];
-	
 	public function new() super();
 	
 	override function initialize() {
 		super.initialize();
-		stateMachine.addAllToAll(_states).setState(GameState.Loading);
+		stateMachine.addAllToAll(cast Type.allEnums(GameState)).setState(GameState.Loading);
 	}
 	
 	public function gotoLocation(data:LocationData) {

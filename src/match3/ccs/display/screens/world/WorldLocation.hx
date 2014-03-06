@@ -14,9 +14,13 @@ using Std;
  */
 class WorldLocation extends ResourceSprite {
 	
-	public function new(asset:DisplayObjectContainer) super(asset);
+	public function new(asset:DisplayObjectContainer) {
+		super();
+		this._asset = asset;
+	}
 	
 	public var data(null, set):LocationData;
+	var _asset:DisplayObjectContainer;
 	
 	inline function set_data(value:LocationData):LocationData {
 		if(value != data) {
@@ -27,11 +31,11 @@ class WorldLocation extends ResourceSprite {
 	}
 	
 	public override function destroy() {
-		if(asset.isNotNull()) {
-			asset.removeEventListener(MouseEvent.CLICK, onAssetClick);
+		if(_asset.isNotNull()) {
+			_asset.removeEventListener(MouseEvent.CLICK, onAssetClick);
 			#if !(android || ios)
-			asset.removeEventListener(MouseEvent.MOUSE_OVER, onAssetMouseOver);
-			asset.removeEventListener(MouseEvent.MOUSE_OUT, onAssetMouseOut);
+			_asset.removeEventListener(MouseEvent.MOUSE_OVER, onAssetMouseOver);
+			_asset.removeEventListener(MouseEvent.MOUSE_OUT, onAssetMouseOut);
 			#end
 		}
 		data = null;
@@ -48,14 +52,14 @@ class WorldLocation extends ResourceSprite {
 		super.update();
 		if(stage.isNull() || data.isNull()) return;
 		var isAvailable:Bool = data.isAvailable;
-		asset.mouseChildren = false;
-		asset.mouseEnabled = isAvailable;
-		if(asset.is(Sprite)) cast(asset, Sprite).buttonMode = isAvailable;
-		asset.alpha = isAvailable ? 1.0 : 0.5;
-		asset.addEventListener(MouseEvent.CLICK, onAssetClick);
+		_asset.mouseChildren = false;
+		_asset.mouseEnabled = isAvailable;
+		if(_asset.is(Sprite)) cast(_asset, Sprite).buttonMode = isAvailable;
+		_asset.alpha = isAvailable ? 1.0 : 0.5;
+		_asset.addEventListener(MouseEvent.CLICK, onAssetClick);
 		#if !(android || ios)
-		asset.addEventListener(MouseEvent.MOUSE_OVER, onAssetMouseOver);
-		asset.addEventListener(MouseEvent.MOUSE_OUT, onAssetMouseOut);
+		_asset.addEventListener(MouseEvent.MOUSE_OVER, onAssetMouseOver);
+		_asset.addEventListener(MouseEvent.MOUSE_OUT, onAssetMouseOut);
 		#end
 	}
 	

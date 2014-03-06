@@ -17,7 +17,7 @@ class LocationScreen extends ScreenView {
 	
 	override function render():Bool {
 		if(!super.render()) return false;
-		if(asset.isNull()) setAsset(cast(data.proto, LocationProto).asset);
+		if(_asset.isNull()) setAsset(cast(data.proto, LocationProto).asset);
 		update();
 		return true;
 	}

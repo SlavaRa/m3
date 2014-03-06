@@ -29,9 +29,9 @@ class WorldScreen extends ScreenView {
 	
 	override function render():Bool {
 		if(!super.render()) return false;
-		if(asset.isNull()) setAsset(cast(data.proto, WorldProto).asset);
+		if(_asset.isNull()) setAsset(cast(data.proto, WorldProto).asset);
 		var count = 0;
-		for(i in 0...asset.numChildren) {
+		for(i in 0..._asset.numChildren) {
 			var container = getContainer("location_" + count++);
 			if(container.isNull()) break;
 			var location = new WorldLocation(container);
