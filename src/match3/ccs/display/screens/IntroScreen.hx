@@ -7,6 +7,10 @@ import ru.stablex.ui.UIBuilder;
 import ru.stablex.ui.widgets.Button;
 import slavara.haxe.core.Utils.DestroyUtil;
 using slavara.haxe.core.Utils.ValidateUtil;
+#if !(android || ios)
+import flash.events.KeyboardEvent;
+import flash.ui.Keyboard;
+#end
 
 /**
  * @author SlavaRa
@@ -38,6 +42,13 @@ class IntroScreen extends ScreenView {
 		return true;
 	}
 	
+	override function clear() {
+		#if !(android || ios)
+		stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+		#end
+		super.clear();
+	}
+	
 	override function update() {
 		super.update();
 		if(stage.isNull()) return;
@@ -46,7 +57,18 @@ class IntroScreen extends ScreenView {
 			_start.x = (stage.stageWidth - _start.w) / 2;
 			_start.y = (stage.stageHeight - _start.h) / 2;
 		}
+		#if !(android || ios)
+		stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
+		#end
 	}
+	
+	#if !(android || ios)
+	function onKeyUp(event:KeyboardEvent) {
+		switch (event.keyCode) {
+			case Keyboard.ENTER, Keyboard.NUMPAD_ENTER: onStartClick();
+		}
+	}
+	#end
 	
 	function onStartClick(?_) {
 		if(willTrigger(GameEvent.GOTO_WORLD_SCREEN)) {
