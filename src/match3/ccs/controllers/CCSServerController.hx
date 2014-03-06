@@ -18,8 +18,9 @@ class CCSServerController extends ServerController {
 	
 	public override function send(command:ServerCommand, ?data:Dynamic, ?onResponseReceived:Dynamic -> Void, ?onResponseSavedData:Dynamic) {
 		switch (command) {
-			case ServerCommand.Start: start();
 			case ServerCommand.Reset: reset();
+			case ServerCommand.Start: start();
+			case _: super.send(command, data, onResponseReceived, onResponseSavedData);
 		}
 	}
 	
