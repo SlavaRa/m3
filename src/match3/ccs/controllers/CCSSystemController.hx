@@ -48,11 +48,13 @@ class CCSSystemController extends SystemController {
 	
 	function onReset(?_) reset();
 	
+	//{ region TODO: refactor here
 	function onGotoLoadingScreen(?_) cast(data, CCSUniverseData).stateMachine.setState(GameState.Loading);
 	
 	function onGotoIntroScreen(?_) cast(data, CCSUniverseData).stateMachine.setState(GameState.Intro);
 	
 	function onGotoWorldScreen(?_) cast(data, CCSUniverseData).stateMachine.setState(GameState.World);
+	//} endregion
 	
 	function onGotoLocationScreen(event:GameEvent) cast(data, CCSUniverseData).gotoLocation(cast(event.data, LocationData));
 }
