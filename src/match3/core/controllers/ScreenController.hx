@@ -14,7 +14,6 @@ class ScreenController extends AbstractController {
 	
 	public override function initialize() {
 		super.initialize();
-		
 		var system:SystemController = cast(baseController, SystemController);
 		var view = new ScreenViewContainer(system.createScreenFactory());
 		system.container.addChild(view);
