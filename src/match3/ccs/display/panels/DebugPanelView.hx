@@ -68,13 +68,13 @@ class DebugPanelView extends ResourceSprite {
 	
 	function onResetClick(event:MouseEvent) {
 		if(willTrigger(GameEvent.RESET)) {
-			super.dispatchEvent(new GameEvent(GameEvent.RESET, true));
+			dispatchEvent(new GameEvent(GameEvent.RESET, true));
 		}
 	}
 	
 	function onWorldScreenClick(event:MouseEvent) {
 		if(willTrigger(GameEvent.GOTO_WORLD_SCREEN)) {
-			super.dispatchEvent(new GameEvent(GameEvent.GOTO_WORLD_SCREEN, true));
+			dispatchEvent(new GameEvent(GameEvent.GOTO_WORLD_SCREEN, true));
 		}
 	}
 }
