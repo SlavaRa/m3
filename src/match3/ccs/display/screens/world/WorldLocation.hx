@@ -29,8 +29,10 @@ class WorldLocation extends ResourceSprite {
 	public override function destroy() {
 		if(asset.isNotNull()) {
 			asset.removeEventListener(MouseEvent.CLICK, onAssetClick);
+			#if !(android || ios)
 			asset.removeEventListener(MouseEvent.MOUSE_OVER, onAssetMouseOver);
 			asset.removeEventListener(MouseEvent.MOUSE_OUT, onAssetMouseOut);
+			#end
 		}
 		data = null;
 		super.destroy();
@@ -45,15 +47,16 @@ class WorldLocation extends ResourceSprite {
 	override function update() {
 		super.update();
 		if(stage.isNull() || data.isNull()) return;
-		
 		var isAvailable:Bool = data.isAvailable;
 		asset.mouseChildren = false;
 		asset.mouseEnabled = isAvailable;
 		if(asset.is(Sprite)) cast(asset, Sprite).buttonMode = isAvailable;
 		asset.alpha = isAvailable ? 1.0 : 0.5;
 		asset.addEventListener(MouseEvent.CLICK, onAssetClick);
+		#if !(android || ios)
 		asset.addEventListener(MouseEvent.MOUSE_OVER, onAssetMouseOver);
 		asset.addEventListener(MouseEvent.MOUSE_OUT, onAssetMouseOut);
+		#end
 	}
 	
 	function onAssetClick(?_) {
@@ -62,6 +65,7 @@ class WorldLocation extends ResourceSprite {
 		}
 	}
 	
+	#if !(android || ios)
 	function onAssetMouseOver(?_) {
 		Log.trace("onAssetMouseOver");
 	}
@@ -69,4 +73,5 @@ class WorldLocation extends ResourceSprite {
 	function onAssetMouseOut(?_) {
 		Log.trace("onAssetMouseOut");
 	}
+	#end
 }
