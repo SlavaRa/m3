@@ -20,12 +20,8 @@ class ScreenViewContainer extends ResourceSprite {
 	
 	inline function set_data(value:IStateMachineHolder) {
 		if(value != data) {
-			if(data.isNotNull()) {
-				data.stateMachine.onChange.remove(updateState);
-			}
-			
+			if(data.isNotNull()) data.stateMachine.onChange.remove(updateState);
 			data = value;
-			
 			if(data.isNotNull()) {
 				_states = _factory.getScreens();
 				data.stateMachine.onChange.add(updateState);
@@ -39,19 +35,15 @@ class ScreenViewContainer extends ResourceSprite {
 	var _states:Map<EnumValue, DisplayObject>;
 	
 	public override function destroy() {
-		data = null;
 		_factory = null;
 		_states = DestroyUtil.destroy(_states);
+		data = null;
 		super.destroy();
 	}
 	
 	inline function updateState() {
 		var smachine = data.stateMachine;
-		if(smachine.previousState.isNotNull()) {
-			removeChild(_states.get(smachine.previousState));
-		}
-		if(smachine.currentState.isNotNull()) {
-			addChild(_states.get(smachine.currentState));
-		}
+		if(smachine.previousState.isNotNull()) removeChild(_states.get(smachine.previousState));
+		if(smachine.currentState.isNotNull()) addChild(_states.get(smachine.currentState));
 	}
 }

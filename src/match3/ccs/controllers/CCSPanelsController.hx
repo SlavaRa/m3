@@ -15,5 +15,4 @@ class CCSPanelsController extends PanelsController {
 	override function getDebugType():Class<PanelController> return CCSDebugPanelController;
 	
 	override function getSettingsType():Class<PanelController> return CCSSettingsPanelController;
-	
 }

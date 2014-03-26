@@ -1,22 +1,20 @@
 package match3.core;
 import flash.text.TextFormat;
 import flash.utils.Timer;
-using slavara.haxe.core.Utils.ValidateUtil;
 
 /**
  * @author SlavaRa
  */
 class GlobalSecondTimer {
 	
-	static var _timer:Timer;
+	static var _timer:Timer = new Timer(60);
 	
 	public static function start() {
-		if(_timer.isNull()) _timer = new Timer(60);
 		_timer.reset();
 		_timer.start();
 	}
 	
-	public static function stop() if(_timer.isNotNull()) _timer.stop();
+	public static function stop() _timer.stop();
 	
 	public static function addEventListener(type : String, listener : Dynamic -> Void, useCapture : Bool = false, priority : Int = 0, useWeakReference : Bool = false) {
 		_timer.addEventListener(type, listener, useCapture, priority, useWeakReference);
@@ -32,15 +30,14 @@ class GlobalSecondTimer {
  */
 class GlobalMinuteTimer {
 	
-	static var _timer:Timer;
+	static var _timer:Timer = new Timer(1000);
 	
 	public static function start() {
-		if(_timer.isNull()) _timer = new Timer(1000);
 		_timer.reset();
 		_timer.start();
 	}
 	
-	public static function stop() if(_timer.isNotNull()) _timer.stop();
+	public static function stop() _timer.stop();
 	
 	public static function addEventListener(type : String, listener : Dynamic -> Void, useCapture : Bool = false, priority : Int = 0, useWeakReference : Bool = false) {
 		_timer.addEventListener(type, listener, useCapture, priority, useWeakReference);
