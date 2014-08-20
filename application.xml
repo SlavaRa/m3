@@ -26,7 +26,5 @@
 	<assets path="assets/proto/ccs" rename="proto" include="*.conf.js" />
 	<assets path="assets/swf/ccs" rename="swf" include="*.swf" />
 	
-	<!--<haxeflag name="-swf-lib" value="D:/haxe/slavara-core-hx/libs/datahelpers.swf" if="flash" />-->
-	<haxeflag name="-swf-lib" value="D:/projects/slavara-core-haxe/libs/datahelpers.swf" if="flash" />D
-	<!--<haxeflag name="-dce std" if="haxe3" />-->
+	<haxeflag name="-swf-lib" value="D:/projects/slavara-core-hx/libs/datahelpers.swf" if="flash" />
 </project>
